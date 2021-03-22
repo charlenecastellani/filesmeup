@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar
+{
+  background-image: linear-gradient(to right, #a516ba, #5f1782);
+  padding: 0 !important;
+
+}
+
+
+.navbar-brand img
+{
+   height: 80px;
+  padding-left: 20px;
+}
+
+.navbar-nav li
+{
+  padding: 0 10px;
+}
+
+.navbar-nav li a
+{
+  color: #fff !important;
+  font-weight: 600;
+}
