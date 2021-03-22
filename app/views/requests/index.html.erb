@@ -1,5 +1,24 @@
 <h1>index</h1>
 
+<h2>Demandes faites :</h2>
+
 <% @requests.each do |request| %>
-  <p><%=request.id %></p> 
+  <% if request.emetteur_id = current_user %>
+  <p><%=request.titre %></p>
+  <p><%=request.destinataire.entreprise %></p>
+  <p><%=request.date_echeance %></p>
+  <p>avancement en %</p>
+  <p>document à valider ?</p>
+  <% end %>
+<% end %>
+
+<h2>Demandes reçues :</h2>
+
+<% @requests.each do |request| %>
+  <% if request.destinataire_id = current_user %>
+  <p><%=request.titre %></p>
+  <p><%=request.emetteur.entreprise %></p>
+  <p><%=request.date_echeance %></p>
+  <p>avancement en %</p>
+  <% end %>
 <% end %>
