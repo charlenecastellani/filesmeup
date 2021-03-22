@@ -1,24 +1,28 @@
-<h1>index</h1>
+<h1>Dashboard</h1>
 
+<h2>Chiffres clés</h2>
+  <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
+  <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
+  
+  
 <h2>Demandes faites :</h2>
 
-<% @requests.each do |request| %>
-  <% if request.emetteur_id = current_user %>
-  <p><%=request.titre %></p>
-  <p><%=request.destinataire.entreprise %></p>
-  <p><%=request.date_echeance %></p>
+<% @emetteur_requests.each do |request| %>
+  <p>titre :<%=request.titre %></p>
+  <p>destinataire:<%=request.destinataire.entreprise %></p>
+  <p>date d'échéance<%=request.date_echeance %></p>
   <p>avancement en %</p>
-  <p>document à valider ?</p>
-  <% end %>
+  <p>nouveau document téléchargé ? ?</p>
 <% end %>
+
 
 <h2>Demandes reçues :</h2>
 
-<% @requests.each do |request| %>
-  <% if request.destinataire_id = current_user %>
-  <p><%=request.titre %></p>
-  <p><%=request.emetteur.entreprise %></p>
-  <p><%=request.date_echeance %></p>
+<% @destinataire_requests.each do |request| %>
+  <p>titre :<%=request.titre %></p>
+  <p>emetteur :<%=request.emetteur.entreprise %></p>
+  <p>date d'échéance :<%=request.date_echeance %></p>
   <p>avancement en %</p>
-  <% end %>
+  <p>document rejeté ? ?</p>
 <% end %>
+
