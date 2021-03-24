@@ -12,7 +12,7 @@ class Request < ApplicationRecord
       end
     end 
     if total_doc >= 1 
-      ((doc_attente.to_f / total_doc) * 100).to_i
+      (((total_doc - doc_attente.to_f)/ total_doc) * 100).to_i
     else 
       0
     end
