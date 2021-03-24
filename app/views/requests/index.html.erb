@@ -3,7 +3,7 @@
 <h2>Chiffres clés</h2>
   <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
   <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
-  <p>avancement : <%= @destinataire_requests.count%></p>
+  
   
   
 <h2>Demandes faites :</h2>
@@ -13,7 +13,7 @@
   <p>destinataire:<%=request.destinataire.entreprise %></p>
   <p>date d'échéance<%=request.date_echeance %></p>
   <p>avancement : <%= request.avancement%> %</p>
-  <p>nouveau document téléchargé ? ?</p>
+  <p>nouveau document <%= @doc_a_valider%> </p>
 <% end %>
 
 
@@ -23,7 +23,7 @@
   <p>titre :<%=request.titre %></p>
   <p>emetteur :<%=request.emetteur.entreprise %></p>
   <p>date d'échéance :<%=request.date_echeance %></p>
-  <p>avancement en %</p>
-  <p>document rejeté ? ?</p>
+  <p>avancement : <%= request.avancement%> %</p>
+  <p>nouveau document <%= @doc_a_valider%> </p>
 <% end %>
 
