@@ -1,0 +1,9 @@
+<h1>New Request</h1>
+
+<%= simple_form_for(@request) do |f| %>
+  <%= f.input:titre %>
+  <%= f.association :destinataire, collection: User.all, label_method: :email %>
+  <%= f.input :date_creation %>
+  <%= f.input :date_echeance %>
+  <%= f.submit %>
+<% end %>
