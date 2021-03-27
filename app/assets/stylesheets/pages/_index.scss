@@ -2,17 +2,15 @@
 @import "home";
 
 
-
-
-.wrapper .main_content
+.main_content
 {
   width: 100%;
-  margin-left: 200px;
+  padding-left: 200px;
   background: #FAFAFB;
 }
 
 
-.wrapper .main_content .header
+.main_content .header
 {
   padding: 20px;
   background: #fff;
@@ -21,16 +19,17 @@
 }
 
 
-.wrapper .main_content .info
+.main_content .info
 {
   margin: 20px;
   height: 900px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #717171;
   line-height: 25px;
 }
 
-
-.wrapper .main_content .info div
+.main_content .info div
 {
   margin-bottom: 20px;
 }

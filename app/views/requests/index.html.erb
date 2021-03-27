@@ -1,6 +1,12 @@
 <!---- appel sidebar --->
 <%= render "shared/sidebar" %>
 
+
+ <div class="main_content">
+        <div class="header">Bienvenue</div>
+        <div class="info">
+
+
 <h1>Dashboard</h1>
 
 <h2>Chiffres clés</h2>
@@ -10,13 +16,14 @@
 
  <%= link_to "créer une nouvelle demande",new_request_path %>
 
+
 <div class="demandes">
   <div class="demandes_faites">
     <h2>Demandes faites :</h2>
     <% @emetteur_requests.each do |request| %>
       <div class="cards">
         <%= link_to request_path(request), class: "remove_link_style" do  %>
-          <div class="card ">
+          <div class="card-demande">
             <p>titre :<%=request.titre %></p>
             <p>destinataire:<%=request.destinataire.entreprise %></p>
             <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
@@ -27,12 +34,13 @@
       </div>
     <% end %>
   </div>
+
   <div class="demandes_recues">
     <h2>Demandes reçues :</h2>
     <% @destinataire_requests.each do |request| %>
       <%= link_to request_path(request), class: "remove_link_style" do  %>
          <div class="cards">
-          <div class="card">
+          <div class="card-demande">
             <p>titre :<%=request.titre %></p>
             <p>emetteur :<%=request.emetteur.entreprise %></p>
             <p>date d'échéance :<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
@@ -45,6 +53,10 @@
   </div>
 </div>
 
+
+
+
+      </div>
 
 
 
