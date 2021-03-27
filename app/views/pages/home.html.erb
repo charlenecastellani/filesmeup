@@ -1,0 +1,186 @@
+ <section id="nav-bar">
+         <nav class="navbar navbar-expand-lg navbar-light">
+
+            <div class="container-fluid">
+                  <a class="navbar-brand"><%= image_tag("telegram.png", width: 0) %></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="fa fa-bars"></i>
+                    </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Fonctionnalités</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pour qui</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tarifs</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Connexion</a>
+                    </li>
+
+                     <li class="nav-item">
+                      <button class="btn btn-primary" type="submit">Créer un compte</button>
+                    </li>
+
+                    <!-- Avatar -->
+                     <li class="nav-item dropdown">
+                      <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  </ul>
+                </div>
+              </div>
+          </nav>
+    </section>
+
+
+
+<!--- banner section ------>
+
+    <section id="banner">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-6">
+              <p class="promo-title">FILES ME UP</p>
+              <p>L'hebergement de vos document repensé. Plus besoin de vous déplacer pour envoyer vos documents<br>
+               Service clientèle disponible 24/24</p>
+              <a href="#"></a>
+            </div>
+
+            <div class="col-md-6 text-center">
+
+               <%= image_tag("business-meeting.svg", width: 500, height: 400, crop: :fill) %>
+
+            </div>
+          </div>
+        </div>
+
+     <%= image_tag("transparent-wave.svg", :class => "bottom-img") %>
+  </section>
+
+
+<!--- services section ------>
+
+
+  <section id="services">
+      <div class="containter text-center">
+        <h1 class="title"> Ce que nous faisons </h1>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <%= image_tag("service24-24.png", :class => "services-img") %>
+            <h4>Services 24/24</h4>
+            <p> 99% de nos réponses satisfaisantes sont <br> délivrés avec un temps <br> moyen de réponse de 3 minutes</p>
+          </div>
+
+          <div class="col-md-4">
+            <%= image_tag("service24-24.png", :class => "services-img") %>
+            <h4>Simplicité d'utilisation</h4>
+            <p> Glissez,importé et déposez  <br> vos documents depuis votre ordinateur ou smartphone, <br>c'est tout !</p>
+          </div>
+
+          <div class="col-md-4">
+            <%= image_tag("service24-24.png", :class => "services-img") %>
+            <h4>Vos documents accéssible</h4>
+            <p> 99% de nos réponses satisfaisantes sont <br> délivrés avec un temps <br> moyen de réponse de 3 minutes</p>
+          </div>
+
+      </div>
+      <!--- button ------>
+      <button type="button" class="btn btn-primary">Tous les services</button>
+    </div>
+</section>
+
+
+   <!--- About us  ------>
+
+   <section id="about-us">
+     <div class="container">
+       <h1 class="title text-center">Pourquoi nous faire confiance ?</h1>
+       <div class="row">
+         <div class="col-md-6">
+           <p>Pourquoi sommes nous différents ?</p>
+           <ul>
+               <li>Nous facilitons les tâches administratives</li>
+               <li>Votre temps est notre priorité</li>
+               <li>Nos protégeons vos données</li>
+               <li>Nous suivons vos dossiers</li>
+               <li>Notre équipe est réactive</li>
+           </ul>
+         </div>
+            <!--- img rocket  ------>
+         <div class="col-md-6">
+          <%= image_tag("launch-project.png", width: 500, height: 400, crop: :fill) %>
+         </div>
+       </div>
+     </div>
+   </section>
+
+
+    <!--- Testimonials  ------>
+    <section id="testimonials">
+      <div class="container">
+        <h1 class="title text-center">Testimoniaux</h1>
+        <div class="row offset-1">
+          <div class="col-md-5 testimonials">
+            <p>"J'ai beaucoup apprecié de travaille avec FilesMeUp <br>je peux enfin me focaliser sur mon travail
+              <br>et moins penser à la paperasse.</p>
+                <%= image_tag("natalia.png", :class => "") %>
+                <p class="user-details"><b>Natalia P</b> RH at Flux</p>
+          </div>
+
+          <div class="col-md-5 testimonials">
+            <p>"L'administratif est devenu <br>un est simple comme un jeu d'enfants.
+              <br> Ça a changé ma vie et mes journées !</p>
+                <%= image_tag("seb.png", :class => "") %>
+                <p class="user-details"><b>Seb.M</b> Manager at LeGram</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!--- Social Media  ------>
+
+        <section id="social-media">
+          <div class="container text-center">
+            <p>Suivez-nous!</p>
+            <div class="social-icons">
+              <a href="#"><%= image_tag("instagram.svg") %></a>
+              <a href="#"><%= image_tag("facebook.png") %></a>
+              <a href="#"><%= image_tag("linkedin.png") %></a>
+              <a href="#"><%= image_tag("twitter.png") %></a>
+            </div>
+          </div>
+        </section>
+
+
+        <!--- Social Media  ------>
+
+
+        <section id="footer">
+          <%= image_tag("transparent-wave-2.svg", :class => "footer-img") %>
+          <div class="container">
+            <div class="row ">
+              <div class="col-md-4 footer-box">
+                <%= image_tag("telegram.png", width: 60, height: 90) %><p>Suivez nos actualités sur nos réseaux sociaux <br>
+                afin de connaitre nos dernières mises à jour !</p>
+              </div>
+
+                <div class="col-md-4 footer-box">
+                <p><b>Contactez-nous</b></p>
+                <p><i class="fas fa-map-marker-alt"></i> Marseille, 13006</p>
+                <p><i class="far fa-envelope"></i> support@filesmeup</p>
+                <p><i class="fas fa-phone"></i> 09 89 22 23 12</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
