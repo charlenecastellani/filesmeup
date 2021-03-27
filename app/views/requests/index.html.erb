@@ -10,11 +10,11 @@
         <li><a href="#">Notifications</a></li>
         <li><a href="#">Membres</a></li>
         <li><a href="#">Paramétres</a></li>
-        <li><a href="#">Se déconnecter</a></li>
+      
       </ul>
 
-      <div class="log_out">
-        <li><a href="#">out</a>Se déconnecter</li>
+      <div >
+        <li><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary" %></li>
       </div>
   </div>
 
