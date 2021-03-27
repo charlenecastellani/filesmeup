@@ -5,6 +5,67 @@
   border: none;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  position: relative;
 }
+
+
+.recent {
+  margin-top: 3rem;
+}
+
+
+.activity-grid
+{
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-column-gap: 1.5rem;
+}
+
+
+.activity-card
+{
+  background: #fff;
+  border-radius: 7px;
+}
+
+
+.activity-card h3
+{
+  color: var(--text-grey);
+  margin: 1rem;
+}
+
+.activity-card table
+{
+  width: 100%;
+  border-collapse: collaspe;
+}
+
+
+.activity-card thead {
+  background: #efefef;
+  text-align: left;
+}
+
+
+th, td,
+ {
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+
+h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.warning {
+  color: red;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 
 
