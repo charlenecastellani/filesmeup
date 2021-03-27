@@ -5,10 +5,12 @@ class RequestsController < ApplicationController
     @emetteur_requests = @requests.where(emetteur_id: current_user.id)
     @doc_a_valider = @emetteur_requests.joins(:documents).where("documents.etat_document = ?", "envoyé").count
     @destinataire_requests = @requests.where(destinataire_id: current_user.id)
+    @doc_refuse = @destinataire_requests.joins(:documents).where("documents.etat_document = ?", "refusé").count
    end 
 
   def show
     @request = Request.find(params[:id])
+    @document = Document.new
     authorize @request
   end
 
