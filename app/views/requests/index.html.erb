@@ -24,11 +24,11 @@
       <div class="cards">
         <%= link_to request_path(request), class: "remove_link_style" do  %>
           <div class="card-demande">
-            <p>titre :<%=request.titre %></p>
-            <p>destinataire:<%=request.destinataire.entreprise %></p>
-            <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+            <p><%=request.titre %></p>
+            <p>Pour : <%=request.destinataire.entreprise %></p>
+            <p>échéance : <%=request.date_echeance.strftime("%d/%m/%Y") %></p>
             <p>avancement : <%= request.avancement%> %</p>
-            <p>nouveau document <%= @doc_a_valider%> </p>
+            <p>document à valider ? <%= @doc_a_valider%> </p>
           </div>
         <% end %>
       </div>
@@ -41,11 +41,11 @@
       <%= link_to request_path(request), class: "remove_link_style" do  %>
          <div class="cards">
           <div class="card-demande">
-            <p>titre :<%=request.titre %></p>
-            <p>emetteur :<%=request.emetteur.entreprise %></p>
-            <p>date d'échéance :<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+            <p><%=request.titre %></p>
+            <p> De : <%=request.emetteur.entreprise %></p>
+            <p>échéance : <%=request.date_echeance.strftime("%d/%m/%Y") %></p>
             <p>avancement : <%= request.avancement%> %</p>
-            <p>document refusé <%= @doc_refuse%> </p>
+            <p>document refusé ? <%= @doc_refuse%> </p>
           </div>
         <% end %>
       </div>
