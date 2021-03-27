@@ -1,10 +1,5 @@
-
-
 <!---- appel sidebar --->
 <%= render "shared/sidebar" %>
-
-
-
 
 <h1>Dashboard</h1>
 
@@ -12,30 +7,6 @@
   <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
 
   <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
-
-
-
-
-<h2>Demandes faites :</h2>
-
-<% @emetteur_requests.each do |request| %>
-  <p>titre :<%=request.titre %></p>
-  <p>destinataire:<%=request.destinataire.entreprise %></p>
-  <p>date d'échéance<%=request.date_echeance %></p>
-  <p>avancement : <%= request.avancement%> %</p>
-  <p>nouveau document <%= @doc_a_valider%> </p>
-<% end %>
-
-
-<h2>Demandes reçues :</h2>
-
-<% @destinataire_requests.each do |request| %>
-  <p>titre :<%=request.titre %></p>
-  <p>emetteur :<%=request.emetteur.entreprise %></p>
-  <p>date d'échéance :<%=request.date_echeance %></p>
-  <p>avancement : <%= request.avancement%> %</p>
-  <p>nouveau document <%= @doc_a_valider%> </p>
-<% end %>
 
  <%= link_to "créer une nouvelle demande",new_request_path %>
 
