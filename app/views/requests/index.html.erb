@@ -2,6 +2,7 @@
 <%= render "shared/sidebar" %>
 
 
+
  <div class="main_content">
         <div class="header">Bienvenue</div>
         <div class="info">
@@ -17,6 +18,91 @@
  <%= link_to "créer une nouvelle demande",new_request_path %>
 
 
+<!----- div test Amath ----->
+
+<!--- table ---->
+
+<section class="recent">
+  <div class="activity-grid">
+    <div class="activity-card">
+      <h3>Demandes faites</h3>
+
+
+     <table>
+        <!--- Titres columns ---->
+           <thead>
+             <tr>
+               <th>Titres</th>
+               <th>Destinataires</th>
+               <th>Echéance</th>
+               <th>Avancement</th>
+               <th>Nouveau doc</th>
+               <th>Status</th>
+             </tr>
+           </thead>
+              <!--- Fin columns ---->
+
+           <tbody>
+            <tr>
+              <td>Titre</td>
+              <td>Destinaire</td>
+              <td>Echeance</td>
+              <td>07/07/2021</td>
+              <td>pdf</td>
+              <td><span class="badge-success">Complet</span></td>
+            </tr>
+
+            <tr>
+              <td>Titre</td>
+              <td>Destinaire</td>
+              <td>Echeance</td>
+              <td>07/07/2021</td>
+              <td>pdf</td>
+              <td><span class="badge-success">Imcomplet</span></td>
+            </tr>
+
+             <tr>
+              <td>Titre</td>
+              <td>Destinaire</td>
+              <td>Echeance</td>
+              <td>07/07/2021</td>
+              <td>pdf</td>
+              <td><span class="badge-success">Imcomplet</span></td>
+            </tr>
+
+             <tr>
+              <td>Titre</td>
+              <td>Destinaire</td>
+              <td>Echeance</td>
+              <td>07/07/2021</td>
+              <td>pdf</td>
+              <td><span class="badge-success">Imcomplet</span></td>
+            </tr>
+
+             <tr>
+              <td>Titre</td>
+              <td>Destinaire</td>
+              <td>Echeance</td>
+              <td>07/07/2021</td>
+              <td>pdf</td>
+              <td><span class="badge-success">Imcomplet</span></td>
+            </tr>
+
+
+
+           <!--- lignes ---->
+
+
+           </tbody>
+
+
+         </table>
+         </div>
+  </div>
+</section>
+
+
+
 <div class="demandes">
   <div class="demandes_faites">
     <h2>Demandes faites :</h2>
@@ -24,11 +110,23 @@
       <div class="cards">
         <%= link_to request_path(request), class: "remove_link_style" do  %>
           <div class="card-demande">
-            <p><%=request.titre %></p>
-            <p>Pour : <%=request.destinataire.entreprise %></p>
-            <p>échéance : <%=request.date_echeance.strftime("%d/%m/%Y") %></p>
-            <p>avancement : <%= request.avancement%> %</p>
-            <p>document à valider ? <%= @doc_a_valider%> </p>
+
+            <h4><%=request.titre %></h4>
+            <p><i class="far fa-building mr-2"></i><%=request.destinataire.entreprise %></p>
+
+            <!---
+            <p>Pourcentage <%= request.avancement%> %</p>
+             ---->
+              <% if @doc_a_valider > 0  %>
+               <p class="warning">
+                 <i class="fas fa-exclamation-triangle"></i>
+               </p>
+              <% end %>
+
+            <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
+
+
+            
           </div>
         <% end %>
       </div>
@@ -46,14 +144,53 @@
             <p>échéance : <%=request.date_echeance.strftime("%d/%m/%Y") %></p>
             <p>avancement : <%= request.avancement%> %</p>
             <p>document refusé ? <%= @doc_refuse%> </p>
+
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
-</div>
 
 
+  <!--- div origine à conserver temporairement
+
+  <div class="demandes">
+    <div class="demandes_faites">
+      <h2>Demandes faites :</h2>
+      <% @emetteur_requests.each do |request| %>
+        <div class="cards">
+          <%= link_to request_path(request), class: "remove_link_style" do  %>
+            <div class="card-demande">
+              <li><p>titre :<%=request.titre %></p></li>
+              <p>destinataire:<%=request.destinataire.entreprise %></p>
+              <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+              <p>avancement : <%= request.avancement%> %</p>
+              <p> nouveau document <%= @doc_a_valider%></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="demandes_recues">
+      <h2>Demandes reçues :</h2>
+      <% @destinataire_requests.each do |request| %>
+        <%= link_to request_path(request), class: "remove_link_style" do  %>
+           <div class="cards">
+            <div class="card-demande">
+              <p>titre :<%=request.titre %></p>
+              <p>emetteur :<%=request.emetteur.entreprise %></p>
+              <p>date d'échéance :<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+              <p>avancement : <%= request.avancement%> %</p>
+              <p>document refusé <%= @doc_refuse%> </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+---->
 
 
       </div>
