@@ -1,1 +1,36 @@
 <h1>show request</h1>
+<div class="container">
+
+  <h1><%= @request.name %></h1>
+  <%= link_to "Back to Dashboard", requests_path %>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h3>Fichiers demandés</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Etat_document</th>
+          </thead>
+          <% @request.documents.each do |document| %>
+            <tr>
+              <td><%= document.nom %></td>
+              <td><%= document.description %></td>
+              <td>
+                  <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      
+    </div>
+  </div>
+
+
+</div>
