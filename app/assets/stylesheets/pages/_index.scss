@@ -1,2 +1,36 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+
+
+.wrapper .main_content
+{
+  width: 100%;
+  margin-left: 200px;
+  background: #FAFAFB;
+}
+
+
+.wrapper .main_content .header
+{
+  padding: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+
+.wrapper .main_content .info
+{
+  margin: 20px;
+  height: 900px;
+  color: #717171;
+  line-height: 25px;
+}
+
+
+.wrapper .main_content .info div
+{
+  margin-bottom: 20px;
+}
