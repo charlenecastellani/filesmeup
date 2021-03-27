@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @document = Document.new
     authorize @request
   end
 
