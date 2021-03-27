@@ -2,6 +2,7 @@
 <div class="container">
 
   <h1><%= @request.titre %></h1>
+  <h2> date d'échéance : <%= @request.date_echeance.strftime("%d/%m/%Y") %>   :   J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
   <%= link_to "Back to Dashboard", requests_path %>
 
   <div class="row">
