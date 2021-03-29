@@ -3,103 +3,89 @@
 
 
 
+
  <div class="main_content">
-        <div class="header">Bienvenue</div>
+        <div class="header">Bonjour</div>
         <div class="info">
 
-
-<h1>Dashboard</h1>
+ <button class="btn btn-primary" type="submit"><%= link_to "créer une nouvelle demande",new_request_path %></button>
 
 <h2>Chiffres clés</h2>
+
+<!-----  Vivier
+
+  <h2>Chiffres clés</h2>
   <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
 
   <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
-
  <%= link_to "créer une nouvelle demande",new_request_path %>
+
+----->
 
 
 <!----- div test Amath ----->
+
+<section class="card-parent">
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Réacticivité admin</h5>
+        <p class="card-text"> 5 dossiers en cours.. </p>
+         <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
+
+  <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 10 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <i class="far fa-bell"></i>
+        <h5 class="card-title">Reminder J-7 </h5>
+        <p class="card-text"></p>
+        <p class="card-text">4 Dossiers non complet</p>
+        <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="...">
+      <i class="fas fa-tasks"></i>
+      <div class="card-body">
+        <h5 class="card-title">Dossier en cours</h5>
+        <p class="card-text">n longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
 
 <!--- table ---->
 
 <section class="recent">
   <div class="activity-grid">
     <div class="activity-card">
-      <h3>Demandes faites</h3>
 
 
-     <table>
-        <!--- Titres columns ---->
-           <thead>
-             <tr>
-               <th>Titres</th>
-               <th>Destinataires</th>
-               <th>Echéance</th>
-               <th>Avancement</th>
-               <th>Nouveau doc</th>
-               <th>Status</th>
-             </tr>
-           </thead>
-              <!--- Fin columns ---->
-
-           <tbody>
-            <tr>
-              <td>Titre</td>
-              <td>Destinaire</td>
-              <td>Echeance</td>
-              <td>07/07/2021</td>
-              <td>pdf</td>
-              <td><span class="badge-success">Complet</span></td>
-            </tr>
-
-            <tr>
-              <td>Titre</td>
-              <td>Destinaire</td>
-              <td>Echeance</td>
-              <td>07/07/2021</td>
-              <td>pdf</td>
-              <td><span class="badge-success">Imcomplet</span></td>
-            </tr>
-
-             <tr>
-              <td>Titre</td>
-              <td>Destinaire</td>
-              <td>Echeance</td>
-              <td>07/07/2021</td>
-              <td>pdf</td>
-              <td><span class="badge-success">Imcomplet</span></td>
-            </tr>
-
-             <tr>
-              <td>Titre</td>
-              <td>Destinaire</td>
-              <td>Echeance</td>
-              <td>07/07/2021</td>
-              <td>pdf</td>
-              <td><span class="badge-success">Imcomplet</span></td>
-            </tr>
-
-             <tr>
-              <td>Titre</td>
-              <td>Destinaire</td>
-              <td>Echeance</td>
-              <td>07/07/2021</td>
-              <td>pdf</td>
-              <td><span class="badge-success">Imcomplet</span></td>
-            </tr>
-
-
-
-           <!--- lignes ---->
-
-
-           </tbody>
-
-
-         </table>
-         </div>
-  </div>
-</section>
 
 
 
@@ -126,7 +112,7 @@
             <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
 
 
-            
+
           </div>
         <% end %>
       </div>
