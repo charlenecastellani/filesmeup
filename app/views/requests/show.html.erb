@@ -21,7 +21,7 @@
               <td><%= document.description %></td>
               <td><%= document.etat_document %></td>
               <td>
-                  <i class="fa fa-trash destroy_dose"></i>
+                <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
                 <% end %>
               </td>
             </tr>

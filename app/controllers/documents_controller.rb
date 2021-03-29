@@ -19,6 +19,16 @@ class DocumentsController < ApplicationController
     
     redirect_to request_path(@request)
   end
+
+  def destroy
+    @document = Document.find(params[:id])
+    @request = @document.request
+    @document.destroy
+    
+    authorize @document
+    
+    redirect_to request_path(@request)
+  end
   
   private
   

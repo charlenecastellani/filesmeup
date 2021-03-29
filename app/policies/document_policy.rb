@@ -12,4 +12,8 @@ class DocumentPolicy < ApplicationPolicy
   def create?
     user == record.request.emetteur
   end
+
+  def destroy?
+    record.request.emetteur == user
+  end
 end
