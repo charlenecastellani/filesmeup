@@ -1,0 +1,9 @@
+<h1>Nouvelle demande</h1>
+
+<%= simple_form_for(@request) do |f| %>
+  <%= f.input:titre %>
+  <%= f.association :destinataire, collection: User.all, label_method: :email %>
+  <%= f.input :date_creation, as: :string, required: false, input_html: {class: "datepicker"}  %>
+  <%= f.input :date_echeance, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.button :submit, "Créer", class: "btn btn-primary" %>
+<% end %>

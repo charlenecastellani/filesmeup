@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:prenom, :nom, :fonction, :entreprise])
+  end
+
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || requests_path
   end
 
   include Pundit
