@@ -5,4 +5,11 @@ class DocumentPolicy < ApplicationPolicy
         .or(scope.joins(:request).where('requests.emetteur_id = ?', user.id))
     end
   end
+  def new?
+    true
+  end
+
+  def create?
+    user == record.request.emetteur
+  end
 end

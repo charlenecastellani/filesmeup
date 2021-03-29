@@ -19,6 +19,7 @@
             <tr>
               <td><%= document.nom %></td>
               <td><%= document.description %></td>
+              <td><%= document.etat_document %></td>
               <td>
                   <i class="fa fa-trash destroy_dose"></i>
                 <% end %>
@@ -28,7 +29,9 @@
       </table>
     </div>
     <div class="col-sm-12 col-md-6">
+    <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request) %>
       <%= link_to "Mise à jour de la demande", edit_request_path(@request) %>
+  
     </div>
   </div>
 
