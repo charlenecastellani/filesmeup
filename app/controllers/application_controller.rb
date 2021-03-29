@@ -11,6 +11,10 @@
     devise_parameter_sanitizer.permit(:account_update, keys: [:prenom, :nom, :fonction, :entreprise])
   end
 
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || requests_path
+  end
+
   include Pundit
 
   # Pundit: white-list approach.

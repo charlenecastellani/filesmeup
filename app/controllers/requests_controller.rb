@@ -14,6 +14,18 @@ class RequestsController < ApplicationController
     authorize @request
   end
 
+  def edit
+    @request = Request.find(params[:id])
+    authorize @request
+  end
+
+  def update
+    @request = Request.find(params[:id])
+    @request.update(request_params)
+    redirect_to request_path(@request)
+    authorize @request
+  end
+
   def new
     @request = Request.new
     authorize @request
