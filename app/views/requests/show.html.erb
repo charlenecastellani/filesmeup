@@ -1,12 +1,28 @@
-<h1>show request</h1>
-<div class="container">
 
-  <h1><%= @request.titre %></h1>
-  <h2> date d'échéance : <%= @request.date_echeance.strftime("%d/%m/%Y") %>   :   J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
-  <%= link_to "Back to Dashboard", requests_path %>
+<%= render "shared/sidebar" %>
+
+<div class="main_content">
+  <div class="header">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-4">
+        <h1><%= @request.titre %></h1>
+        <h2> date d'échéance : <%= @request.date_echeance.strftime("%d/%m/%Y") %>   :   J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
+      </div>
+    <div class="col-4">
+      <button class="btn btn-primary" type="submit"><%= link_to "Ajouter un élément à la demande", new_request_document_path(@request) %></button>
+    </div>
+  </div>  
+    
+
+
+<div class="info">
+<section class="recent">
+  <div class="activity-grid">
+    <div class="activity-card">
+
+
 
   <div class="row">
-    <div class="col-sm-12 col-md-6">
       <h3>Fichiers demandés</h3>
       <table class="table table-bordered">
         <tbody>
@@ -27,12 +43,18 @@
             </tr>
         </tbody>
       </table>
-    </div>
-    <div class="col-sm-12 col-md-6">
-    <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request) %>
-      <%= link_to "Mise à jour de la demande", edit_request_path(@request) %>
-  
-    </div>
-  </div>
 
+    </section>
+
+      
+      
+    </div>
+    </div>
+    
+
+
+
+  </div>
+  </div>
+</div>
 </div>
