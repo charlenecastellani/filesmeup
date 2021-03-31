@@ -4,9 +4,11 @@
 <div class="main_content">
   <div class="header">
     <div class="row justify-content-between align-items-center">
-      <div class="col-4">
+      <div class="col-8">
         <h1><%= @request.titre %></h1>
-        <h2> date d'échéance : <%= @request.date_echeance.strftime("%d/%m/%Y") %>   :   J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
+        <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %>  <%= @request.destinataire.nom %></h2>
+        <h3> Echéance au <%= @request.date_echeance.strftime("%d/%m/%Y") %> </h3>
+        <h2> J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
       </div>
     <div class="col-4">
       <button class="btn btn-primary" type="submit"><%= link_to "Ajouter un élément à la demande", new_request_document_path(@request) %></button>
