@@ -9,10 +9,10 @@
         <h2> date d'échéance : <%= @request.date_echeance.strftime("%d/%m/%Y") %>   :   J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
       </div>
     <div class="col-4">
-      <button class="btn btn-primary" type="submit"><%= link_to "Ajouter un élément à la demande", new_request_document_path(@request) %></button>
+      <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request), class: "btn btn-primary couleur" %></button>
     </div>
-  </div>  
-    
+  </div>
+
 
 
 <div class="info">
@@ -46,11 +46,11 @@
 
     </section>
 
-      
-      
+
+
     </div>
     </div>
-    
+
 
 
 
