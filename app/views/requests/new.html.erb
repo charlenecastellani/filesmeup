@@ -1,3 +1,40 @@
+    <section class="get_in_touch">
+      <h1 class="titre">Nouvelle demande</h1>
+        <div class="container">
+          <div class="contact-form row">
+            <div class="form-field col-lg-6">
+              <input id="name" class="input-text" type="text" name="">
+              <label for="name" class="label">Nom</label>
+            </div>
+
+            <div class="form-field col-lg-6">
+              <input id="email" class="input-text" type="email" name="">
+              <label for="email" class="label">email</label>
+            </div>
+
+            <div class="form-field col-lg-6">
+              <input id="name" class="input-text" type="text" name="">
+              <label for="name" class="label">Date création</label>
+            </div>
+
+            <div class="form-field col-lg-6">
+              <input id="name" class="input-text" type="text" name="">
+              <label for="name" class="label">Date écheance</label>
+            </div>
+
+            <div class="form-field col-lg-12">
+              <input class="submit-btn" type="submit" value="submit" name="">
+          </div>
+        </div>
+    </section>
+
+
+
+
+
+<!---- Section
+
+
 <h1>Nouvelle demande</h1>
 
 <%= simple_form_for(@request) do |f| %>
@@ -7,3 +44,6 @@
   <%= f.input :date_echeance, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.button :submit, "Créer", class: "btn btn-primary" %>
 <% end %>
+
+
+form ------>
