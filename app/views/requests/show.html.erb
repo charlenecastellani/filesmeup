@@ -32,6 +32,7 @@
             <th>Nom</th>
             <th>Description</th>
             <th>Etat_document</th>
+            <th>Action</th>
           </thead>
           <% @request.documents.each do |document| %>
             <tr>
@@ -39,12 +40,48 @@
               <td><%= document.description %></td>
               <td><%= document.etat_document %></td>
               <td>
-                <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
+                <% if current_user == @request.destinataire && document.etat_document == "en attente" %>
+                  <%= simple_form_for document do |f| %>
+                    <%= f.input :fichier, as: :file %>
+                    <%= f.submit "envoyer" %>
+                  <% end %>
+                <% else  %>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Visualiser
+                  </button>
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                           <%= cl_image_tag document.fichier.key, format: :jpg, height: 1000, width: 800 %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
                 <% end %>
               </td>
             </tr>
+          <% end %>
         </tbody>
       </table>
+
+<!-- Modal -->
+
+
+
+
 
     </section>
 
@@ -52,10 +89,6 @@
 
     </div>
     </div>
-
-
-
-
   </div>
   </div>
 </div>
