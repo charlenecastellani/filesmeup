@@ -5,7 +5,11 @@
   border: none;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 
@@ -17,15 +21,19 @@
 .activity-grid
 {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 100%;
   grid-column-gap: 1.5rem;
+  
+
 }
 
 
 .activity-card
 {
-  background: #fff;
+  background: white;
   border-radius: 7px;
+  margin: 5px;
+  
 }
 
 
@@ -41,6 +49,11 @@
   border-collapse: collaspe;
 }
 
+.activity-card button
+{
+display: flex;
+align-items: center;
+}
 
 .activity-card thead {
   background: #efefef;
