@@ -97,12 +97,10 @@
         <%= link_to request_path(request), class: "remove_link_style" do  %>
           <div class="card-demande">
 
-            <h4><%=request.titre %></h4>
-            <p><i class="far fa-building mr-2"></i><%=request.destinataire.entreprise %></p>
-
-            <!---
-            <p>Pourcentage <%= request.avancement%> %</p>
-             ---->
+            <p><%=request.titre %>  </p>
+            <p><i class="far fa-building mr-2"></i><%=request.destinataire.entreprise %> - <%=request.destinataire.prenom %> <%=request.destinataire.nom %></p>       
+            <p><%= request.avancement%> %</p>
+            
               <% if @doc_a_valider > 0  %>
                <p class="warning">
                  <i class="fas fa-exclamation-triangle"></i>
@@ -121,21 +119,28 @@
 
   <div class="demandes_recues">
     <h2>Demandes reçues :</h2>
-    <% @destinataire_requests.each do |request| %>
-      <%= link_to request_path(request), class: "remove_link_style" do  %>
-         <div class="cards">
+<% @emetteur_requests.each do |request| %>
+      <div class="cards">
+        <%= link_to request_path(request), class: "remove_link_style" do  %>
           <div class="card-demande">
-            <p><%=request.titre %></p>
-            <p> De : <%=request.emetteur.entreprise %></p>
-            <p>échéance : <%=request.date_echeance.strftime("%d/%m/%Y") %></p>
-            <p>avancement : <%= request.avancement%> %</p>
-            <p>document refusé ? <%= @doc_refuse%> </p>
+
+            <p><%=request.titre %>  </p>
+            <p><i class="far fa-building mr-2"></i><%=request.emetteur.entreprise %> - <%=request.emetteur.prenom %> <%=request.emetteur.nom %></p>       
+            <p><%= request.avancement%> %</p>
+            
+              <% if @doc_refuse > 0  %>
+               <p class="warning">
+                 <i class="fas fa-exclamation-triangle"></i>
+               </p>
+              <% end %>
+
+            <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
 
           </div>
         <% end %>
       </div>
     <% end %>
-  </div>
+
 
 
   <!--- div origine à conserver temporairement
