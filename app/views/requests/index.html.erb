@@ -86,10 +86,6 @@
   <div class="activity-grid">
 
     
-    <div class="activity-card">
-
-
-
 
 
 <div class="demandes">
@@ -110,9 +106,9 @@
                     <h4><%=request.titre %></h4>
                     <p><i class="far fa-building mr-2"></i><%=request.destinataire.entreprise %></p>
 
-                    <!---
+                    
                     <p>Pourcentage <%= request.avancement%> %</p>
-                    ---->
+                    
                       <% if @doc_a_valider > 0  %>
                       <p class="warning">
                         <i class="fas fa-exclamation-triangle"></i>
@@ -125,13 +121,9 @@
               </div>
             <% end %>
          </div>
-      </div>
+ 
     
       <div class="activity-card">
-
-
-
-
           <div class="demandes_recues">
              <div class="text-left">
             <h2>Demandes reçues :</h2>
