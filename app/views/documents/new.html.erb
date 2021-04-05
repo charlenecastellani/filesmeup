@@ -1,0 +1,15 @@
+<h1>Ajouter un nouvel élément à la demande</h1>
+
+<div class="container" >
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <%= simple_form_for([@request, @document]) do |f| %>
+      <%= f.label :nom %>
+      <%= f.text_field :nom %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.submit value= "Ajouter" %>
+      <% end %>
+    </div>
+  </div>
+</div>
