@@ -16,4 +16,8 @@ class DocumentPolicy < ApplicationPolicy
   def destroy?
     record.request.emetteur == user
   end
+
+  def update?
+    record.request.destinataire == user
+  end
 end

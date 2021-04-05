@@ -5,16 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+
 Document.destroy_all
 Request.destroy_all
 User.destroy_all
 
+file1 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
+file2 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
+file3 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
+file4 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
+file5 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
 
 user1 = User.create(nom: "Dupont", prenom: "Boris", fonction: "DAF", entreprise: "Laboite", email: "bd@laboite.com", password: "orezza")
+user1.photo.attach(io: file1, filename: 'victorine.jpg', content_type: 'image/jpg')
+user1.save
+
 user2 = User.create(nom: "Martin", prenom: "Bob", fonction: "Auditeur", entreprise: "Lecabinet", email: "bm@lecabinet.com", password: "orezza")
+user2.photo.attach(io: file2, filename: 'victorine.jpg', content_type: 'image/jpg')
+user2.save
+
 user3 = User.create(nom: "Aubert", prenom: "Bruno", fonction: "Expert-comptable", entreprise: "The New Cab", email: "ba@thecab.com", password: "orezza")
+user3.photo.attach(io: file3, filename: 'victorine.jpg', content_type: 'image/jpg')
+user3.save
+
 user4 = User.create(nom: "Marin", prenom: "Jean", fonction: "Auditeur", entreprise: "AuditRocket", email: "jm@auditrocket.com", password: "orezza")
-user5 = User.create(nom: "Briche", prenom: "Victorine", fonction: "DRH", entreprise: "Laboite", email: "vb@laboite.com", password: "orezza")
+user4.photo.attach(io: file4, filename: 'victorine.jpg', content_type: 'image/jpg')
+user4.save
+
+user5 = User.new(nom: "Briche", prenom: "Victorine", fonction: "DRH", entreprise: "Laboite", email: "vb@laboite.com", password: "orezza")
+user5.photo.attach(io: file5, filename: 'victorine.jpg', content_type: 'image/jpg')
+user5.save
+
 user6 = User.create(nom: "Poutoux", prenom: "Chantal", fonction: "PDG", entreprise: "Laboite", email: "cp@laboite.com", password: "orezza")
 user7 = User.create(nom: "Sorro", prenom: "Rose", fonction: "Chef comptable", entreprise: "Thecompany", email: "rs@thecompany.com", password: "orezza")
 user8 = User.create(nom: "Aniorte", prenom: "Luc", fonction: "RAF", entreprise: "BBest", email: "la@bbest.com", password: "orezza")
