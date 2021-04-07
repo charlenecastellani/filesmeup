@@ -1,4 +1,5 @@
 // Import page-specific CSS files here.
+
 @import "home";
 
 
@@ -45,7 +46,17 @@
   font-color: white !important;
 }
 
-.card-parent {
-  display: flex;
+
+
+#services .btn-primary
+{
+  box-shadow: none;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #a516ba, #5f1782);
+
 }
+
+
 
