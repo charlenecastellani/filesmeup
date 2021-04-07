@@ -1,5 +1,28 @@
-<h1>Hello Document Index page</h1>
+<%= render "shared/sidebar" %>
+
+<div class="main_content">
+
+    
+
+    <h1>Mes documents reçus</h1>
+
+    <p><% @documents.each do |document| %></p>
+        <% if document.etat_document == "reçu"%>
+        <p><%= document.nom  %></p>
+        <% end %>
+    <% end %>
+
+        
+            
+    <h1>Mes documents envoyés</h1>
+
+    <p><% @documents.each do |document| %></p>
+        <% if document.etat_document == "envoyé"%>
+        <p><%= document.nom  %></p>
+        <% end %>
+    <% end %>
+
+    
 
 
-<p><%= @documents.count %></p>
-<p><%= @documents.nom %></p>
+</div>

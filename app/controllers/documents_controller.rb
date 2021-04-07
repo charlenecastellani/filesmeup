@@ -2,8 +2,8 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = policy_scope(Document)
-    @emetteur_requests = @requests.where(emetteur_id: current_user.id)
-    @destinataire_requests = @requests.where(destinataire_id: current_user.id)
+    @emetteur_requests = Request.where(emetteur_id: current_user.id)
+    @destinataire_requests = Request.where(destinataire_id: current_user.id)
   end
 
   def new
