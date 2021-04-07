@@ -46,6 +46,108 @@
                     <%= f.submit "envoyer" %>
                   <% end %>
                 <% else  %>
+                  
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                    Visualiser
+                  </button>
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Document téléchargé :</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+                          <% if document.fichier.attached? %>
+                            <%= cl_image_tag document.fichier.key, format: :jpg, height: 1000, width: 800 %>
+                          <% end %>
+                        </div>
+
+                        <div class="modal-footer">
+                          <%= link_to "refuser", refuse_document_path(document), method: :patch, class:"btn btn-danger"  %>
+                          <%= link_to "valider", valide_document_path(document), method: :patch, class:"btn btn-primary"  %>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+<!-- Modal -->
+
+
+
+
+
+    </section>
+
+
+
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<!---   avant essai cathy
+
+<div class="main_content">
+  <div class="header">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-8">
+        <h1><%= @request.titre %></h1>
+        <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %>  <%= @request.destinataire.nom %></h2>
+        <h3> Echéance au <%= @request.date_echeance.strftime("%d/%m/%Y") %> </h3>
+        <h2> J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
+      </div>
+    <div class="col-4">
+      <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request), class: "btn btn-primary couleur" %></button>
+    </div>
+  </div>
+
+
+
+<div class="info">
+<section class="recent">
+  <div class="activity-grid">
+    <div class="activity-card">
+
+
+
+  <div class="row">
+      <h3>Fichiers demandés</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Etat_document</th>
+            <th>Action</th>
+          </thead>
+          <% @request.documents.each do |document| %>
+            <tr>
+              <td><%= document.nom %></td>
+              <td><%= document.description %></td>
+              <td><%= document.etat_document %></td>
+              <td>
+                <% if current_user == @request.destinataire && document.etat_document == "en attente" %>
+                  <%= simple_form_for document do |f| %>
+                    <%= f.input :fichier, as: :file %>
+                    <%= f.submit "envoyer" %>
+                  <% end %>
+                <% else  %>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                     Visualiser
                   </button>
@@ -97,3 +199,5 @@
   </div>
 </div>
 </div>
+
+--->

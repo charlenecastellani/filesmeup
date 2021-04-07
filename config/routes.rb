@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :requests do
     resources :documents, only: [:new, :create]
   end
-  resources :documents, only: [:index, :update, :destroy]
+  resources :documents, only: [:index, :update, :destroy] do
+    member do
+      patch :valide
+      patch :refuse
+    end
+  end
 end
