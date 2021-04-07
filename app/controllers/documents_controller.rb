@@ -32,6 +32,21 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def valide
+    @document = Document.find(params[:id])
+    authorize @document
+    @document.update(etat_document:"validé")
+    redirect_to request_path(@document.request)
+  end
+
+
+  def refuse
+    @document = Document.find(params[:id])
+    authorize @document
+    @document.update(etat_document:"refusé")
+    redirect_to request_path(@document.request)
+  end
+
   def destroy
     @document = Document.find(params[:id])
     @request = @document.request

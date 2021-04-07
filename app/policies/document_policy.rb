@@ -20,4 +20,15 @@ class DocumentPolicy < ApplicationPolicy
   def update?
     record.request.destinataire == user
   end
+
+  def valide?
+    #record.request.emetteur == user
+    true
+  end
+  
+  def refuse?
+    #record.request.emetteur == user
+    true
+  end
+
 end
