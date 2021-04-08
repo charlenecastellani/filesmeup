@@ -1,12 +1,11 @@
 <!---- appel sidebar --->
 <%= render "shared/sidebar" %>
 
-
-
-
  <div class="main_content">
 
         <div class="header">
+           <h5><%= "Bonjour #{current_user.prenom} #{current_user.nom}" %></h5>
+          <h1>DASHBOARD</h1>
 
           <li class="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -15,15 +14,14 @@
           </div>
         </li>
         </div>
-        
-      
-                    
-   
-  <div class="info">
 
- 
 
-<!-----  Vivier
+<!---- BLOCK DEBUT
+
+
+
+<-----  Vivier
+   <div class="info">
 
   <h2>Chiffres clés</h2>
   <p>Nb total de demandes émises : <%= @emetteur_requests.count%></p>
@@ -31,10 +29,8 @@
   <p>Nb total de demandes reçues : <%= @destinataire_requests.count%></p>
  <%= link_to "créer une nouvelle demande",new_request_path %>
 
------>
 
 
-<!----- div test Amath ----->
 
 <section class="card-parent">
 
@@ -90,25 +86,38 @@
 
 </section>
 
+----->
+
 <!--- table ---->
 
 
 <section class="recent">
   <div class="activity-grid">
 
-    
-
-
 <div class="demandes">
- 
       <div class="activity-card">
         <div class="demandes_faites">
             <div class="text-left">
-            <h2>Demandes faites :</h2>
+                <h2>Demandes faites :</h2>
             </div>
+             <!--- button
+
             <div class="text-center">
             <%= link_to "créer une nouvelle demande",new_request_path, class: "btn btn-primary couleur" %>
             </div>
+
+
+             ------>
+              </div>
+
+              <!--- button v2 ------>
+               <section id="services">
+
+               <div>
+                <button type="button" class="btn btn-primary">créer une nouvelle demande</button>
+                </div>
+              </section>
+
             <% @emetteur_requests.each do |request| %>
               <div class="cards">
                 <%= link_to request_path(request), class: "remove_link_style" do  %>
@@ -117,9 +126,9 @@
                     <h4><%=request.titre %></h4>
                     <p><i class="far fa-building mr-2"></i><%=request.destinataire.entreprise %></p>
 
-                    
+
                     <p>Pourcentage <%= request.avancement%> %</p>
-                    
+
                       <% if @doc_a_valider > 0  %>
                       <p class="warning">
                         <i class="fas fa-exclamation-triangle"></i>
@@ -132,8 +141,8 @@
               </div>
             <% end %>
          </div>
- 
-    
+
+
       <div class="activity-card">
           <div class="demandes_recues">
              <div class="text-left">
@@ -200,15 +209,12 @@
     </div>
   </div>
 
----->
+
 
 
 </div>
 
-
-
-
-
+---->
 
 
 
