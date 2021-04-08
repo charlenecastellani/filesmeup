@@ -2,6 +2,8 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = policy_scope(Document)
+    @emetteur_requests = Request.where(emetteur_id: current_user.id)
+    @destinataire_requests = Request.where(destinataire_id: current_user.id)
   end
 
   def new
@@ -30,6 +32,21 @@ class DocumentsController < ApplicationController
      else
       redirect_to request_path(@document.request)
     end
+  end
+
+  def valide
+    @document = Document.find(params[:id])
+    authorize @document
+    @document.update(etat_document:"validé")
+    redirect_to request_path(@document.request)
+  end
+
+
+  def refuse
+    @document = Document.find(params[:id])
+    authorize @document
+    @document.update(etat_document:"refusé")
+    redirect_to request_path(@document.request)
   end
 
   def destroy
