@@ -13,38 +13,18 @@
 
 .navbar-user .header
 {
+  font-size: 12px;
+  font-family: sans-serif;
   padding: 20px;
-  background: #fff;
+  height: 100px;
+  background: #white;
   color: #717171;
-  border-bottom: 1px solid #e0e4e8;
+  border-bottom: 0px solid #e0e4e8;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-
-.navbar-user .info
-{
-  margin: 20px;
-  height: 900px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #717171;
-  line-height: 25px;
-}
-
-.navbar-user .info div
-{
-  margin-bottom: 20px;
-}
-
-
-
-.couleur {
-  background-color: #EF8D32 !important;
-  border-color: #EF8D32 !important;
-  font-color: white !important;
-}
 
 
 
@@ -63,7 +43,7 @@ body {
 }
 
 .container {
-    background-color: fafafb;
+    background-color: #FAFAFB;
 
 }
 
@@ -73,13 +53,12 @@ body {
 .item{
     opacity: 1;
     cursor: pointer;
-    background-color: #7971ea;
-    border: 5px solid #443ea0;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 20px;
     margin: 20px;
     padding: 80px;
     width: 80px;
-    color: white;
+    color: black;
     font-size: 24px;
     text-align: center;
 }
@@ -90,15 +69,14 @@ body {
 
 
 .container-2 {
-    background-color: fafafb;
+    background-color: #FAFAFB;
 }
 
 .item-2{
     opacity: 1;
     cursor: pointer;
-    background-color: F3F3F3;
-    border: 5px solid #443ea0;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 20px;
     margin: 20px;
     padding: 30px;
     color: white;
