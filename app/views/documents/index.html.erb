@@ -1,28 +1,44 @@
 <%= render "shared/sidebar" %>
 
-<div class="main_content">
-
-    
-
-    <h1>Mes documents reçus</h1>
-
-    <p><% @documents.each do |document| %></p>
-        <% if document.etat_document == "reçu"%>
-        <p><%= document.nom  %></p>
+<div class="container">
+    <div class="item-2">
+        <h1>Mes documents reçus</h1>
+        <%  @documents_by_destinataire.each do |nom_du_client, documents| %>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="far fa-folder"></i>
+                                <%= nom_du_client %> 
+                            </button>
+                        </h5>
+                    </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <% documents.each do |document| %>   
+                            <% if document.etat_document == "reçu"%>
+                            <p><%= document.nom  %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+                </div>
+            </div>
         <% end %>
-    <% end %>
+    </div>
 
+
+    <div class="item-2">
         
             
-    <h1>Mes documents envoyés</h1>
+        <h1>Mes documents envoyés</h1>
 
-    <p><% @documents.each do |document| %></p>
-        <% if document.etat_document == "envoyé"%>
-        <p><%= document.nom  %></p>
+        <p><% @documents.each do |document| %></p>
+        <i class="fas fa-folder-minus"></i>
+            <% if document.etat_document == "envoyé"%>
+            <p><%= document.nom  %></p>
+            <% end %>
         <% end %>
-    <% end %>
-
-    
-
-
+    </div>
 </div>
