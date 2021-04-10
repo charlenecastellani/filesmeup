@@ -11,14 +11,33 @@
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="far fa-folder"></i>
                                 <%= nom_du_client %> 
+                                
                             </button>
                         </h5>
                     </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <% documents.each do |document| %>   
-                            <% if document.etat_document == "reçu"%>
+                            <% if document.etat_document == "validé"%>
                             <p><%= document.nom  %></p>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                            <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Document téléchargé :</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <% if document.fichier.attached? %>
+                                    <%= cl_image_tag document.fichier.key, format: :jpg, height: 900, width: 750 %>
+                                    <% end %>
+                                </div>
+                                </div>
+                            </div> 
+                            </div>
                             <% end %>
                         <% end %>
                     </div>
@@ -34,10 +53,47 @@
             
         <h1>Mes documents envoyés</h1>
 
-        <p><% @documents.each do |document| %></p>
-            <% if document.etat_document == "envoyé"%>
-            <p><%= document.nom  %></p>
-            <% end %>
+        <%   @documents_by_year.each do |year, documents| %>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="far fa-folder"></i>
+                                <%= year %> 
+                                
+                            </button>
+                        </h5>
+                    </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <% documents.each do |document| %>   
+                            <% if document.etat_document == "envoyé"%>
+                            <p><%= document.nom  %></p>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                            <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Document téléchargé :</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <% if document.fichier.attached? %>
+                                    <%= cl_image_tag document.fichier.key, format: :jpg, height: 900, width: 750 %>
+                                    <% end %>
+                                </div>
+                                </div>
+                            </div> 
+                            </div>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+                </div>
+            </div>
         <% end %>
     </div>
 </div>

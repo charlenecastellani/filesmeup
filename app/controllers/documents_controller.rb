@@ -7,8 +7,15 @@ class DocumentsController < ApplicationController
     @documents_by_destinataire =  Document.joins(:request)
                                   .select('documents.id, requests.id as request_id, documents.nom, documents.etat_document')
                                   .where(requests: {emetteur_id: current_user.id})
-                                  .group('documents.id, requests.id, documents.nom, documents.etat_document').group_by {|d| d.request.destinataire.entreprise }
-  end
+                                  .group('documents.id, requests.id, documents.nom, documents.etat_document')
+                                  .group_by {|d| d.request.destinataire.entreprise }
+ 
+    @documents_by_year =          Document.joins(:request)
+                                  .select('documents.id, requests.id as request_id, documents.nom, documents.etat_document, documents.updated_at')
+                                  .where(requests: {destinataire_id: current_user.id})
+                                  .group('documents.id, requests.id, documents.nom, documents.etat_document')
+                                  .group_by {|d| d.updated_at.year }
+  end                                
 
   def new
     @document = Document.new

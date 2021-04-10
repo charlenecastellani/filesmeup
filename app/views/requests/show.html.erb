@@ -48,8 +48,8 @@
                 <% end %>
               <% end %>
               <% if document.etat_document == "envoyé" || document.etat_document == "validé" %>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualiser</button>
-                <div class="modal document-modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                            <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -71,8 +71,8 @@
             
             <% if current_user == @request.emetteur %>
               <% if document.fichier.attached? %>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualiser</button>
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                            <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
