@@ -5,8 +5,10 @@
 <div class="main_content">
 
   <div class="header custom-navbar" >
+
     <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   </div>
+
 
   <div class="titre">
     <div class="row justify-content-between align-items-center">
@@ -47,7 +49,7 @@
                     <%= f.submit "envoyer" %>
                   <% end %>
                  <% end %>
-              
+
                 <% if document.etat_document == "envoyé"  %>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualiser</button>
                   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -66,16 +68,18 @@
                           <% end %>
                         </div>
 
-                                                            
+
+
 
 
                      
                   <% end %> 
                 <% end %>     
 
+
                 <% if current_user == @request.emetteur %>
                  <% if document.fichier.attached? %>
-                  
+
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualiser</button>
                   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -101,7 +105,7 @@
                         </div>
                         <% end %>
 
-                      <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>                    
+                      <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
 
 
                       </div>
@@ -109,9 +113,11 @@
                   </div>
 
                 <% end %>
+
                     
 
-                  
+
+
                 <% end %>
               </td>
             </tr>
@@ -125,6 +131,5 @@
 
     </div>
     </div>
-  
 
 
