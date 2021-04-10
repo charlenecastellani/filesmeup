@@ -39,14 +39,28 @@
               <div class="ligne1-titre">
               <%= link_to request_path(request), class: "remove_link_style" do  %>
 
-                  <li><p>titre :<%=request.titre %></p></li>
-                  <p>destinataire:<%=request.destinataire.entreprise %>Entreprise</p>
-                  </div>
-                  <!--- ligne 2 --->
+                  <p>Destinataire: <%=request.destinataire.entreprise %></p>
+                  <p><%= "#{request.destinataire.prenom} #{request.destinataire.nom}"  %></p>
+                  <li><p><%=request.titre %></p></li>
 
-              <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
-              <p>avancement : <%= request.avancement%> %</p>
-              <p> nouveau document <%= @doc_a_valider%></p>
+
+                  </div>
+
+                  <!--- ligne 2 --->
+              <div class="ligne2-deadline">
+                <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+              </div>
+
+               <!--- ligne 3 --->
+              <div class="ligne3-avancement">
+                <p>avancement : <%= request.avancement%> %</p>
+              </div>
+
+               <!--- ligne 4 --->
+               <div class="ligne4-nouveau-document">
+                 <p> nouveau document <%= @doc_a_valider%></p>
+               </div>
+
             </div>
           <% end %>
         </div>
