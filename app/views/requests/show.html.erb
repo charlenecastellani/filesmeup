@@ -5,35 +5,23 @@
 <div class="main_content">
 
   <div class="header custom-navbar" >
-         
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          
-        </div>
+    <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  </div>
 
-  <div class="header">
+  <div class="titre">
     <div class="row justify-content-between align-items-center">
       <div class="col-8">
         <h1><%= @request.titre %></h1>
-        <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %>  <%= @request.destinataire.nom %></h2>
+        <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %> <%= @request.destinataire.nom %> (<%= @request.destinataire.fonction %>)</h2>
         <h3> Echéance au <%= @request.date_echeance.strftime("%d/%m/%Y") %> </h3>
         <h2> J -  <%= ((@request.date_echeance - Time.new)/60/60/24).to_i %> </h2>
       </div>
-    <div class="col-4">
-      <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request), class: "btn btn-primary couleur" %></button>
+      <div class="col-4">
+        <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request), class: "btn btn-primary couleur" %></button>
+      </div>
     </div>
-  </div>
-
-
-
 
 <div class="info">
-
-<section class="recent">
-  <div class="activity-grid">
-    <div class="activity-card">
-
-
-
 
   <div class="row">
       <h3>Fichiers </h3>
@@ -81,9 +69,7 @@
                                                             
 
 
-                      </div>
-                    </div>
-                  </div>
+                     
                   <% end %> 
                 <% end %>     
 
@@ -123,9 +109,7 @@
                   </div>
 
                 <% end %>
-
-
-                        
+                    
 
                   
                 <% end %>
@@ -135,13 +119,7 @@
         </tbody>
       </table>
 
-<!-- Modal -->
-
-
-
-
-
-    </section>
+     </section>
 
 
 
