@@ -22,14 +22,14 @@
 <!---- BLOCK DEBUT TEST --->
 
 <div class="container">
-    <div class="item">card 1</div>
-    <div class="item">card 2</div>
-    <div class="item">card 3</div>
+    <div class="chiffres">card 1</div>
+    <div class="chiffres">card 2</div>
+    <div class="chiffres">card 3</div>
 </div>
 
 
 <div class="container-2">
-    <div class="item-2"><p>Demandes faites</p>
+    <div class="demandes"><p>Demandes faites</p>
       <% @emetteur_requests.each do |request| %>
         <div class="cards">
 
@@ -51,7 +51,7 @@
 
 
 
-    <div class="item-2"><p>Demandes reçues</p>
+    <div class="demandes"><p>Demandes reçues</p>
       <% @destinataire_requests.each do |request| %>
         <%= link_to request_path(request), class: "remove_link_style" do  %>
            <div class="cards">
