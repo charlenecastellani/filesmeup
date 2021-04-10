@@ -133,25 +133,26 @@ body {
 
 .cards {
 display: flex;
-background-color: red;
+background-color: white;
 }
 
 
 .card-demandes {
-   opacity: 1;
+    opacity: 1;
     cursor: pointer;
-    background-color: blue;
+    background-color: #FAFAFB;
     border-radius: 20px;
     margin: 20px;
-    width: 800px;
-    height: 200px;
+    height: 100px;
     padding: 30px;
     font-size: 12px;
     text-align: center;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
     decoration: none;
-    align-content: flex-start;
-
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -159,30 +160,78 @@ background-color: red;
 
 .ligne1-titre {
   background-color: orange;
-  text-align: left;
-  display: flex;
+  padding: 10px;
+  border-radius: 20px;
+  height: 80px;
+  padding: 10px;
+
 }
 
 .ligne2-deadline {
   background-color: yellow;
-  text-align: right;
+  padding: 10px;
+  border-radius: 20px;
+  height: 40px;
+  justify-content: center;
+  flex-direction: row;
+
 }
 
 
 .ligne3-avancement {
-  background-color: yellow;
-  text-align: right;
+  background-color: green;
+  padding: 10px;
+  border-radius: 20px;
+  height: 40px;
+  justify-content: center;
+  flex-direction: row;
 }
 
 
 .ligne4-nouveau-document {
-  background-color: yellow;
-  text-align: right;
+  background-color: black;
+  padding: 10px;
+  border-radius: 20px;
+  height: 80px;
+  justify-content: center;
+  flex-direction: row;
 }
 
-/* Pagination page */
-@media screen and (max-width: 600px){
-  .chiffre{
-    display: inline;
+
+.index-user-info {
+  display: flex;
+}
+
+
+.index-container {
+  margin-left: 200px;
+}
+
+
+.remove_link_style_index {
+  text-decoration: none !important;
+  color: inherit;
+  &:hover{
+    color: inherit;
   }
+}
+
+.index-deadline {
+  background: #fae9cb;
+  box-shadow: none;
+  border-radius: 20px;
+  height: 20px;
+  width: 100px;
+  padding: 6px 4px;
+  border: 10px;
+}
+
+
+.index-deadline h4 {
+  color: blue;
+  font-size: 10px;
+}
+
+.h4 {
+  color: blue;
 }
