@@ -16,17 +16,74 @@
         </div>
 
 
+
+
+
 <!---- BLOCK DEBUT TEST --->
 
-<div class="container">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-</div>
+    <div class="mother-container-chiffres">
+        <div class="chiffres">card 1</div>
+        <div class="chiffres">card 2</div>
+        <div class="chiffres">card 3</div>
+      </div>
+
 
 <div class="container-2">
-    <div class="item-2">1</div>
-    <div class="item-2">2</div>
+    <div class="demandes"><p>Demandes faites</p>
+      <% @emetteur_requests.each do |request| %>
+        <div class="cards">
+
+          <div class="card-demandes">
+
+            <!--- ligne 1 --->
+              <div class="ligne1-titre">
+              <%= link_to request_path(request), class: "remove_link_style" do  %>
+
+                  <p>Destinataire: <%=request.destinataire.entreprise %></p>
+                  <p><%= "#{request.destinataire.prenom} #{request.destinataire.nom}"  %></p>
+                  <li><p><%=request.titre %></p></li>
+
+
+                  </div>
+
+                  <!--- ligne 2 --->
+              <div class="ligne2-deadline">
+                <p>date d'échéance<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+              </div>
+
+               <!--- ligne 3 --->
+              <div class="ligne3-avancement">
+                <p>avancement : <%= request.avancement%> %</p>
+              </div>
+
+               <!--- ligne 4 --->
+               <div class="ligne4-nouveau-document">
+                 <p> nouveau document <%= @doc_a_valider%></p>
+               </div>
+
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+
+    <div class="demandes"><p>Demandes reçues</p>
+      <% @destinataire_requests.each do |request| %>
+        <%= link_to request_path(request), class: "remove_link_style" do  %>
+           <div class="cards">
+            <div class="card-demandes">
+              <p>titre :<%=request.titre %></p>
+              <p>emetteur :<%=request.emetteur.entreprise %></p>
+              <p>date d'échéance :<%=request.date_echeance.strftime("%d/%m/%Y") %></p>
+              <p>avancement : <%= request.avancement%> %</p>
+              <p>document refusé <%= @doc_refuse%> </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    </div>
 </div>
 
 
