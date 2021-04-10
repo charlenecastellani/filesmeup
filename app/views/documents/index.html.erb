@@ -8,14 +8,14 @@
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= nom_du_client.delete(" ") %>" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="far fa-folder"></i>
                                 <%= nom_du_client %> 
                                 
                             </button>
                         </h5>
                     </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapse<%= nom_du_client.delete(" ") %>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <% documents.each do |document| %>   
                             <% if document.etat_document == "validé"%>
@@ -58,14 +58,14 @@
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= year %>" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="far fa-folder"></i>
                                 <%= year %> 
                                 
                             </button>
                         </h5>
                     </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapse<%=year%>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <% documents.each do |document| %>   
                             <% if document.etat_document == "envoyé"%>
