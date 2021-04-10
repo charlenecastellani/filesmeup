@@ -4,6 +4,10 @@ class DocumentsController < ApplicationController
     @documents = policy_scope(Document)
     @emetteur_requests = Request.where(emetteur_id: current_user.id)
     @destinataire_requests = Request.where(destinataire_id: current_user.id)
+    @documents_by_destinataire =  Document.joins(:request)
+                                  .select('documents.id, requests.id as request_id, documents.nom, documents.etat_document')
+                                  .where(requests: {emetteur_id: current_user.id})
+                                  .group('documents.id, requests.id, documents.nom, documents.etat_document').group_by {|d| d.request.destinataire.entreprise }
   end
 
   def new
