@@ -35,7 +35,6 @@
         <h1>Mes documents envoyés</h1>
 
         <p><% @documents.each do |document| %></p>
-        <i class="fas fa-folder-minus"></i>
             <% if document.etat_document == "envoyé"%>
             <p><%= document.nom  %></p>
             <% end %>
