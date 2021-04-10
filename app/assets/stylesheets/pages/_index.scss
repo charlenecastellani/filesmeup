@@ -45,13 +45,11 @@
 }
 
 body {
-
 }
 
-.container {
-    background-color: #FAFAFB;
+/* NE PAS TOUCHER */
 
-}
+
 
 
 /* base divs- index.html.erb */
@@ -63,7 +61,7 @@ body {
     border-radius: 20px;
     margin: 20px;
     padding: 80px;
-    width: 80px;
+    width: 100px;
     color: black;
     font-size: 24px;
     text-align: center;
@@ -94,8 +92,9 @@ body {
 
 /* style items dans divs & container - index */
 
-.container {
-    display: flex;
+.mother-container-chiffres {
+  background: green;
+  display: flex;
 }
 
 .chiffres {
@@ -122,4 +121,35 @@ body {
     flex-grow: 2;
     height: 800px;
     width: 80%;
+}
+
+/* style petites divs demandes - index */
+
+.cards {
+display: flex;
+background-color: blue;
+}
+
+
+.card-demandes {
+   opacity: 1;
+    cursor: pointer;
+    background-color: yellow;
+    border-radius: 20px;
+    margin: 20px;
+    width: 800px;
+    height: 200px;
+    padding: 30px;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    decoration: none;
+    align-content: flex-start;
+
+}
+
+
+
+.ligne1-titre {
+  background-color: blue;
 }
