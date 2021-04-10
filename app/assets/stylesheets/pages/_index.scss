@@ -47,7 +47,12 @@
 body {
 }
 
-/* NE PAS TOUCHER */
+/* NE PAS CREER DE .CONTAINER
+
+.container {
+    background-color: #a516ba;
+
+}*/
 
 
 
@@ -65,7 +70,8 @@ body {
     color: black;
     font-size: 24px;
     text-align: center;
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2)
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    flex-wrap: wrap;
 }
 
 .chiffres:hover{
@@ -93,7 +99,7 @@ body {
 /* style items dans divs & container - index */
 
 .mother-container-chiffres {
-  background: green;
+
   display: flex;
 }
 
@@ -127,14 +133,14 @@ body {
 
 .cards {
 display: flex;
-background-color: blue;
+background-color: red;
 }
 
 
 .card-demandes {
    opacity: 1;
     cursor: pointer;
-    background-color: yellow;
+    background-color: blue;
     border-radius: 20px;
     margin: 20px;
     width: 800px;
@@ -150,6 +156,33 @@ background-color: blue;
 
 
 
+
 .ligne1-titre {
-  background-color: blue;
+  background-color: orange;
+  text-align: left;
+  display: flex;
+}
+
+.ligne2-deadline {
+  background-color: yellow;
+  text-align: right;
+}
+
+
+.ligne3-avancement {
+  background-color: yellow;
+  text-align: right;
+}
+
+
+.ligne4-nouveau-document {
+  background-color: yellow;
+  text-align: right;
+}
+
+/* Pagination page */
+@media screen and (max-width: 600px){
+  .chiffre{
+    display: inline;
+  }
 }
