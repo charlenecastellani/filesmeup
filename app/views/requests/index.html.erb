@@ -15,14 +15,45 @@
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+
 <!---- BLOCK DEBUT TEST --->
 
 <div class="index-container">
   <div class="mother-container-chiffres">
-    <div class="chiffres">card 1</div>
-    <div class="chiffres">card 2</div>
-    <div class="chiffres">card 3</div>
+    <div class="chiffres">
+      <h2>24</h2>
+      <p>Documents envoyés</p>
+    </div>
+
+    <div class="chiffres">
+      <div class="chiffres-2">
+        <h2>48</h2>
+      </div>
+      <p>Documents reçus </p>
+    </div>
+
+    <div class="chiffres">
+      <div class="chiffres-3">
+        <h2>12</h2>
+        <p>Dossiers clos</p>
+      </div>
+    </div>
   </div>
+
+   <body>
+        <div class="container-btn">
+            <button class="btn btn1">En cours</button>
+        </div>
+    </body>
+</html>
 
   <div class="container-2">
     <div class="demandes">
@@ -45,6 +76,19 @@
                   <h4><%=request.date_echeance.strftime("%d/%m/%Y") %></h4>
                 </div>
               </div>
+
+
+                     <p>Pourcentage <%= request.avancement%> %</p>
+               <!--- ligne 3 --->
+               <div class="validation">
+                  <div class="dealine-h4">
+                    <% if @doc_a_valider > 0  %>
+                        <p class="warning">
+                          <i class="fas fa-exclamation-triangle"></i>
+                        </p>
+                    <% end %>
+                  </div>
+                </div>
                  <!--- ligne 3 --->
               <div class="index-avancement">
                 <strong><p>avancement </strong><%= request.avancement%> %</p>
