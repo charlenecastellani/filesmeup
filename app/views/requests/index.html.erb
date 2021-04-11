@@ -1,7 +1,6 @@
 <!---- appel sidebar --->
 <%= render "shared/sidebar" %>
 
-
 <div class="navbar-user">
   <div class="header">
     <h5><%= "Bonjour #{current_user.prenom} #{current_user.nom}" %></h5>
@@ -15,43 +14,41 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<!---- BLOCK DEBUT TEST --->
-
+<!---- Fin NAVBAR --->
 <div class="index-container">
   <div class="mother-container-chiffres">
+
+    <!---- start card * 3 --->
     <div class="chiffres">
+      <div class="couleur-chiffres-1">
       <h2>24</h2>
-      <p>Documents envoyés</p>
+    </div>
+    <p>Documents envoyés</p>
     </div>
 
-    <div class="chiffres">
-      <div class="chiffres-2">
+    <div class="chiffres-2">
+      <div class="couleur-chiffres-2">
         <h2>48</h2>
       </div>
       <p>Documents reçus </p>
     </div>
 
-    <div class="chiffres">
-      <div class="chiffres-3">
+    <div class="chiffres-3">
+      <div class="couleur-chiffres-3">
         <h2>12</h2>
-        <p>Dossiers clos</p>
       </div>
+      <p>Dossiers clos</p>
     </div>
   </div>
-
+<!---- end card *3 --->
    <body>
-        <div class="container-btn">
+    <!---- button temporaire *3
+
+      <div class="container-btn">
             <button class="btn btn1">En cours</button>
         </div>
+        --->
+
     </body>
 </html>
 
