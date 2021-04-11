@@ -1,26 +1,40 @@
 <%= render "shared/sidebar" %>
 
 <div class="container-ged">
-    <div class="item-2">
-        <h1>Mes documents reçus</h1>
+    <div class="demandes">
+        <p>Documents reçus</>
         <%  @documents_by_destinataire.each do |nom_du_client, documents| %>
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="far fa-folder"></i>
+                                <i class="fas fa-folder-plus"></i>
                                 <%= nom_du_client %> 
-                                
                             </button>
+                                <p><% i=0 %>
+                                <% documents.each do |document| %>
+                                    <% if document.etat_document == "validé" %>
+                                        <% i+=1 %>
+                                    <% end %>
+                                <% end %>
+                                <% if i == 0 %>
+                                <%= "(aucun document)"%>
+                                <% elsif i == 1 %>
+                                <%= "(#{i} document)" %>
+                                <% else %>
+                                <%= "(#{i} documents)"%>
+                                <% end %></p>
+                            
                         </h5>
                     </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <% documents.each do |document| %>   
                             <% if document.etat_document == "validé"%>
+                            <div class="doc-link">
                             <p><%= document.nom  %></p>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                          <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
                             <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -38,6 +52,7 @@
                                 </div>
                             </div> 
                             </div>
+                            </div>
                             <% end %>
                         <% end %>
                     </div>
@@ -48,10 +63,10 @@
     </div>
 
 
-    <div class="item-2">
+    <div class="demandes">
         
             
-        <h1>Mes documents envoyés</h1>
+        <p>Documents envoyés</p>
 
         <%   @documents_by_year.each do |year, documents| %>
             <div id="accordion">
@@ -59,10 +74,23 @@
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="far fa-folder"></i>
+                                <i class="fas fa-folder-plus"></i>
                                 <%= year %> 
                                 
                             </button>
+                            <p><% i=0 %>
+                                <% documents.each do |document| %>
+                                    <% if document.etat_document == "envoyé" %>
+                                        <% i+=1 %>
+                                    <% end %>
+                                <% end %>
+                                <% if i == 0 %>
+                                <%= "(aucun document)"%>
+                                <% elsif i == 1 %>
+                                <%= "(#{i} document)" %>
+                                <% else %>
+                                <%= "(#{i} documents)"%>
+                                <% end %></p>   
                         </h5>
                     </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -70,7 +98,7 @@
                         <% documents.each do |document| %>   
                             <% if document.etat_document == "envoyé"%>
                             <p><%= document.nom  %></p>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+                          <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
                             <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
