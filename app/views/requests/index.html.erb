@@ -58,8 +58,8 @@
       <% @emetteur_requests.each do |request| %>
         <%= link_to request_path(request), class: "remove_link_style_index" do  %>
           <div class="card-demandes">
-              <!--- ligne 1 --->
 
+              <!--- col 1 avatar --->
               <div class="index-user-info">
                 <%= cl_image_tag current_user.photo.key, class: "avatar" %>
                 <div class="info">
@@ -67,29 +67,45 @@
                   <p><%=request.destinataire.entreprise %></p>
                 </div>
               </div>
-                    <!--- ligne 2 --->
+
+               <!--- col 3 - avancement pourcentage --->
+              <div class="index-avancement">
+                <div class="index-deadline-2"><h4>Pourcentage</h4>
+                <strong><p></strong><%= request.avancement%> %</p>
+                </div>
+
+              </div>
+              <!--- col 2 - Titre Audit - Class à créer  --->
+
+              <div class="titre-request">
+                <h4><%= request.titre %></h4>
+              </div>
+
+
+                    <!--- col 2 - Jours RESTANTS --->
               <div class="index-deadline">
                 <div class="dealine-h4">
-                  <h4><%=request.date_echeance.strftime("%d/%m/%Y") %></h4>
+                  <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
                 </div>
               </div>
 
 
-                     <p>Pourcentage <%= request.avancement%> %</p>
-               <!--- ligne 3 --->
+
+               <!--- col 3 ?
                <div class="validation">
                   <div class="dealine-h4">
-                    <% if @doc_a_valider > 0  %>
-                        <p class="warning">
+                    <% if @doc_a_valider > 0 %>
                           <i class="fas fa-exclamation-triangle"></i>
-                        </p>
                     <% end %>
                   </div>
                 </div>
-                 <!--- ligne 3 --->
-              <div class="index-avancement">
-                <strong><p>avancement </strong><%= request.avancement%> %</p>
-              </div>
+
+                --->
+
+
+
+
+
                  <!--- ligne 4
                <div class="ligne4-nouveau-document">
                  <p> nouveau document <%= @doc_a_valider%></p>
