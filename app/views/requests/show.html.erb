@@ -19,7 +19,7 @@
       <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %> <%= @request.destinataire.nom %> (<%= @request.destinataire.fonction %>)</h2>
       <h2> J-<%= ((@request.date_echeance - Time.new)/60/60/24).to_i %>   :  Echéance au <%= @request.date_echeance.strftime("%d/%m/%Y") %> </h2>
     </div>
-    <div>
+    <div class="bouton-centre">
       <% if current_user == @request.emetteur %>
         <%= link_to "Ajouter un élément à la demande", new_request_document_path(@request), class: "btn btn-pink" %>
       <% end %>
@@ -48,7 +48,8 @@
                 <% end %>
               <% end %>
               <% if document.etat_document == "envoyé" || document.etat_document == "validé" %>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
+              <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
+               <button type="button" class= data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
                             <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -71,8 +72,8 @@
             
             <% if current_user == @request.emetteur %>
               <% if document.fichier.attached? %>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>>Visualiser</button>
-                            <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
+                <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
