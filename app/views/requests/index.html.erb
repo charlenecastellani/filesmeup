@@ -59,7 +59,7 @@
     <div class="demandes">
       <p>Demandes faites</p>
       <div class="text-center">
-            <%= link_to "créer une nouvelle demande",new_request_path, class: "btn btn-primary" %>
+            <%= link_to "Créer une nouvelle demande",new_request_path, class: "btn btn-pink" %>
             </div>
       <% @emetteur_requests.each do |request| %>
         <%= link_to request_path(request), class: "remove_link_style_index" do  %>
@@ -67,7 +67,9 @@
 
               <!--- col 1 avatar --->
               <div class="index-user-info">
-                <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+                <% if request.destinataire.photo.attached?  %>
+                  <%= cl_image_tag request.destinataire.photo.key, class: "avatar" %>
+                <% end  %>
                 <div class="info">
                   <strong><p><%= "#{request.destinataire.prenom} #{request.destinataire.nom}"  %></p></strong>
                   <p><%=request.destinataire.entreprise %></p>
@@ -79,10 +81,7 @@
                 <div class="index-deadline-2">
                 <p><%= request.avancement%> %</p>
                 </div>
-
               </div>
-
-
 
 
               <!---- Block 2 --->

@@ -12,18 +12,21 @@ Document.destroy_all
 Request.destroy_all
 User.destroy_all
 
-file1 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-file2 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-file3 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-file4 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
-file5 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80')
+file1 = URI.open('https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fG1lbiUyMGJ1c2luZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60')
+file2 = URI.open('https://images.unsplash.com/photo-1587319497244-99f294bf8474?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3767&q=80')
+file3 = URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+file4 = URI.open('https://images.unsplash.com/photo-1617332518455-bfd5a39476f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80')
+file5 = URI.open('https://images.unsplash.com/photo-1562071707-7249ab429b2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80')
+file6 = URI.open('https://images.unsplash.com/photo-1613290973355-e3dd79b45de6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+file7 = URI.open('https://images.unsplash.com/photo-1551849569-70e81c886c27?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzkzfHxidXNpbmVzcyUyMHdvbWVufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+file8 = URI.open('https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80')
 
 user1 = User.create(nom: "Dupont", prenom: "Boris", fonction: "DAF", entreprise: "Laboite", email: "bd@laboite.com", password: "orezza")
 user1.photo.attach(io: file1, filename: 'victorine.jpg', content_type: 'image/jpg')
 user1.save
 
 user2 = User.create(nom: "Martin", prenom: "Bob", fonction: "Auditeur", entreprise: "Lecabinet", email: "bm@lecabinet.com", password: "orezza")
-user2.photo.attach(io: file2, filename: 'victorine.jpg', content_type: 'image/jpg')
+user2.photo.attach(io: file2, filename: 'bob.jpg', content_type: 'image/jpg')
 user2.save
 
 user3 = User.create(nom: "Aubert", prenom: "Bruno", fonction: "Expert-comptable", entreprise: "The New Cab", email: "ba@thecab.com", password: "orezza")
@@ -39,8 +42,16 @@ user5.photo.attach(io: file5, filename: 'victorine.jpg', content_type: 'image/jp
 user5.save
 
 user6 = User.create(nom: "Poutoux", prenom: "Chantal", fonction: "PDG", entreprise: "Laboite", email: "cp@laboite.com", password: "orezza")
+user6.photo.attach(io: file6, filename: 'victorine.jpg', content_type: 'image/jpg')
+user6.save
+
 user7 = User.create(nom: "Sorro", prenom: "Rose", fonction: "Chef comptable", entreprise: "Thecompany", email: "rs@thecompany.com", password: "orezza")
+user7.photo.attach(io: file7, filename: 'victorine.jpg', content_type: 'image/jpg')
+user7.save
+
 user8 = User.create(nom: "Aniorte", prenom: "Luc", fonction: "RAF", entreprise: "BBest", email: "la@bbest.com", password: "orezza")
+user8.photo.attach(io: file8, filename: 'victorine.jpg', content_type: 'image/jpg')
+user8.save
 
 audit1 = Request.create(titre: "Audit comptes 2020", date_echeance: "15/05/2021", date_creation: "20/03/2021", destinataire: user1, emetteur: user2)
 audit2 = Request.create(titre: "Audit juridique 2020", date_echeance: "10/06/2021", date_creation: "20/03/2021", destinataire: user3, emetteur: user2)

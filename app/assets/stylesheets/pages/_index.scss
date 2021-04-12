@@ -82,34 +82,29 @@ background-color: #FAFAFB;
     justify-content: center;
     flex-direction: column;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
-    cursor: pointer;
-    background-size: 300%;
-    transition: 0.6s;
+
   }
 
 /* ok */
 
 .chiffres {
   opacity: 100%;
-  background-image: linear-gradient(to left, #f1c40f, #ecf0f1, #f1c40f);
+  background-color: #2D745B;
 }
 
-.chiffres:hover {
-    cursor: pointer;
-    transform: translate(0, -6px);
-    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
-    background-position: right;
-}
+
+
 .couleur-chiffres-1 h2 {
   display: flex;
   justify-content: center;
   color: #EF8D32;
   font-size: 50px;
 }
+
 .chiffres p {
   display: flex;
   justify-content: center;
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
@@ -127,25 +122,16 @@ background-color: #FAFAFB;
     flex-direction: column;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
     cursor: pointer;
-    background-size: 300%;
-    transition: 0.6s;
-    background-size: 300%;
-    transition: 0.6s;
   }
+
 .chiffres-2 {
-  opacity: 90%;
-  background-image: linear-gradient(to left, #ecf0f1, #12CBC4, #12CBC4);
+  background-color: #2D745B;
 }
-.chiffres-2:hover {
-    cursor: pointer;
-    transform: translate(0, -6px);
-    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
-    background-position: right;
-}
+
 .couleur-chiffres-2 h2 {
   display: flex;
   justify-content: center;
-  color: #d35400;
+  color: #EF8D32;
   font-size: 50px;
 }
 .chiffres-2 p {
@@ -171,26 +157,16 @@ background-color: #FAFAFB;
     flex-direction: column;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
     cursor: pointer;
-    background-size: 300%;
-    transition: 0.6s;
-    background-size: 300%;
-    transition: 0.6s;
+
   }
 .chiffres-3 {
-  opacity: 100%;
-  background-image: linear-gradient(to left, #12CBC4, #0652DD, #12CBC4);
-}
-.chiffres-3:hover {
-    cursor: pointer;
-    transform: translate(0, -6px);
-    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
-    background-position: right;
+  background-color: #12B88E;
 }
 
 .couleur-chiffres-3 h2 {
   display: flex;
   justify-content: center;
-  color: #d35400;
+  color: #fff;
   font-size: 50px;
 }
 .chiffres-3 p {
@@ -381,6 +357,14 @@ background-color: white;
 
 .index-user-info {
   display: flex;
+  align-items: center;
+  min-width: 180px;
+    .info{
+      margin-left: 10px;
+      p {
+        margin: 0;
+      }
+    }
 }
 
 
