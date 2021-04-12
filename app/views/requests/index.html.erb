@@ -52,9 +52,14 @@
     </body>
 </html>
 
+
+
   <div class="container-2">
     <div class="demandes">
       <p>Demandes faites</p>
+      <div class="text-center">
+            <%= link_to "créer une nouvelle demande",new_request_path, class: "btn btn-primary" %>
+            </div>
       <% @emetteur_requests.each do |request| %>
         <%= link_to request_path(request), class: "remove_link_style_index" do  %>
           <div class="card-demandes">
@@ -70,24 +75,33 @@
 
                <!--- col 3 - avancement pourcentage --->
               <div class="index-avancement">
-                <div class="index-deadline-2">Pourcentage
+                <div class="index-deadline-2">
                 <p><%= request.avancement%> %</p>
                 </div>
 
               </div>
 
 
-              <---- Block 2 ---->
 
 
-              <!--- col 2 - Titre Audit - Class à créer  --->
+              <!---- Block 2 --->
+                  <div class="titre-request">
+                <strong><%= request.titre %></strong>
+                 <div class="index-deadline">
+                <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
+                </div>
+              </div>
 
-              <div class="titre-request">
+
+
+
+              <!---- Block 2
+                  <div class="titre-request">
                 <h4><%= request.titre %></h4>
               </div>
 
 
-                    <!--- col 2 - Jours RESTANTS --->
+
               <div class="index-deadline">
                 <div class="dealine-h4">
                   <p>
@@ -95,6 +109,12 @@
                   </p>
                 </div>
               </div>
+                ---->
+
+
+              <!--- col 2 - Titre Audit - Class à créer  --->
+
+
 
 
 

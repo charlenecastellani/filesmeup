@@ -17,7 +17,7 @@ body {
 .navbar
 {
   background-image: linear-gradient(to right, #a516ba, #5f1782);
-  padding: 0 !important;
+  padding: 1 !important;
 
 }
 
@@ -149,6 +149,13 @@ text-decoration: none;
   background-image: linear-gradient(to right, #a516ba, #5f1782);
 }
 
+.btn-primary-home {
+  box-shadow: none;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to top, #a516ba, #5f1782);
+}
 
 
 #about-us
