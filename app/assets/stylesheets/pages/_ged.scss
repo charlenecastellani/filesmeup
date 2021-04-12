@@ -1,4 +1,65 @@
 .container-ged
 {
     margin-left: 200px;
+    background-color: #FAFAFB;
+    display: flex;
+}
+
+#headingOne.card-header
+{
+    background-color: rgba(119, 24, 136, 0.5) !important;
+    
+}
+
+.mb-0
+{
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    justify-content: space-between;
+
+}
+
+.mb-0 p
+{
+    font-style: italic;
+    text-transform: lowercase;
+    font-size: 14px;
+    
+}
+
+.btn.btn-link
+{
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    
+    
+}
+
+.fas.fa-folder-plus
+{
+    font-size: 28px;
+    padding-right: 10px;
+}
+
+.card-body
+{
+text-align: left;
+font-size: 16px;
+}
+
+.doc-link
+{
+    display: flex;
+    align-items: center;
+}
+
+.fas.fa-search
+{
+    border: none;
+    background-color: white;
+    color:#771788;
+    padding-left: 30px;
+    padding-bottom: 15px;
 }
