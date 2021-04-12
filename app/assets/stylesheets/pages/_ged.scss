@@ -20,6 +20,23 @@
 
 }
 
+#folder-btn
+{
+    display: flex;
+    align-items: center;
+    border: none !important;
+    &:hover {
+        color: white;
+        opacity: 0.8;
+    }
+    &:active {
+        border: none !important;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+
 .mb-0 p
 {
     font-style: italic;
@@ -59,6 +76,7 @@ font-size: 16px;
 {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .fas.fa-search
