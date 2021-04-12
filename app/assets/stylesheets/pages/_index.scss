@@ -283,6 +283,7 @@ background-color: #FAFAFB;
 /* ne pas toucher demandes */
 
 .demandes {
+  align-items: center;
     flex-grow: 2;
     height: 800px;
     width: 80%;
@@ -376,6 +377,7 @@ background-color: white;
 }
 
 .index-deadline {
+  order: 1;
   background: #fae9cb;
   box-shadow: none;
   border-radius: 20px;
@@ -391,26 +393,43 @@ background-color: white;
   font-size: 10px;
 }
 
-.h4 {
+.dealine-h4{
   color: blue;
+  font-size: 12px;
 }
+
 
 .validation {
   color: black;
-  background: #ff0000;
+  background: green;
   box-shadow: none;
   border-radius: 20px;
   height: 20px;
-  width: 100px;
+  width: 50px;
   padding: 6px 4px;
   border: 10px;
 }
 
+
+
 .validation .index-deadline h4 {
   color: blue;
-  font-size: 10px;
+  font-size: 12px;
 }
 
+.index-avancement{
+  order: 3;
+  color: red;
+  font-size: 20px;
+}
+
+.titre-request h4 {
+  order: 2;
+  display: flex;
+  color: black;
+  font-size: 10px;
+
+}
 
 /* Pourcentage */
 
