@@ -2,7 +2,8 @@
 
 @import "home";
 
-
+/* NE PAS CREER DE .CONTAINER (sinon ça fait sauter)*/
+/* NE PAS CREER DE .btn (sinon ça fait tout sauter*/
 
 .navbar-user
 {
@@ -46,6 +47,7 @@
 }
 
 body {
+
 }
 
 /* NE PAS CREER DE .CONTAINER
@@ -53,14 +55,66 @@ body {
 .container {
     background-color: #a516ba;
 
-}*/
+}
+*/
 
 
 
 
 /* base divs- index.html.erb */
 
+/* NE PAS SUPPRIMER EN DESSOUS */
+
+.mother-container-chiffres {
+background-color: #FAFAFB;
+}
+
+
 .chiffres{
+    font-size: 12px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 80px;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background-size: 300%;
+    transition: 0.6s;
+  }
+
+/* ok */
+
+.chiffres {
+  opacity: 100%;
+  background-image: linear-gradient(to left, #f1c40f, #ecf0f1, #f1c40f);
+}
+
+.chiffres:hover {
+    cursor: pointer;
+    transform: translate(0, -6px);
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
+    background-position: right;
+}
+.couleur-chiffres-1 h2 {
+  display: flex;
+  justify-content: center;
+  color: #EF8D32;
+  font-size: 50px;
+}
+.chiffres p {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 14px;
+}
+
+
+.chiffres-2 {
     font-size: 12px;
     opacity: 1;
     cursor: pointer;
@@ -75,46 +129,83 @@ body {
     cursor: pointer;
     background-size: 300%;
     transition: 0.6s;
+    background-size: 300%;
+    transition: 0.6s;
   }
-
-
-.chiffres {
-  opacity: 100%;
-  background-image: linear-gradient(to left, #EA2027, #EA2027, #f700f7);
+.chiffres-2 {
+  opacity: 90%;
+  background-image: linear-gradient(to left, #ecf0f1, #12CBC4, #12CBC4);
 }
-
-.chiffres:hover {
+.chiffres-2:hover {
     cursor: pointer;
     transform: translate(0, -6px);
     box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
+    background-position: right;
 }
-
-
-.chiffres h2 {
+.couleur-chiffres-2 h2 {
   display: flex;
   justify-content: center;
-  color: #12B88E;
-  font-size: 60px;
+  color: #d35400;
+  font-size: 50px;
 }
-
-.chiffres p {
+.chiffres-2 p {
   display: flex;
   justify-content: center;
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
 
-.chiffres-2 h2 {
-  color: #EF8D32;
-  font-size: 60px;
+
+
+.chiffres-3 {
+  font-size: 12px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 80px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background-size: 300%;
+    transition: 0.6s;
+    background-size: 300%;
+    transition: 0.6s;
+  }
+.chiffres-3 {
+  opacity: 100%;
+  background-image: linear-gradient(to left, #12CBC4, #0652DD, #12CBC4);
+}
+.chiffres-3:hover {
+    cursor: pointer;
+    transform: translate(0, -6px);
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255,0.5);
+    background-position: right;
 }
 
-.chiffres-3 h2 {
-  color: #329CFD;
-  font-size: 60px;
+.couleur-chiffres-3 h2 {
+  display: flex;
+  justify-content: center;
+  color: #d35400;
+  font-size: 50px;
+}
+.chiffres-3 p {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
 }
 
+.btn:hover{
+    background-position: right;
+}
+
+
+/* Parti 2 - Ne pas supprimer*/
 
 .container-2 {
     background-color: #FAFAFB;
@@ -130,40 +221,8 @@ body {
     text-align: center;
 }
 
-test*/
+/* Palette de couleurs supprimable après validation équipe - début test*/
 
-.btn{
-    border: none;
-    margin: 20px;
-    padding: 24px;
-    width: 220px;
-    font-family: "montserrat", sans-serif;
-    text-transform: uppercase;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
-    background-size: 300%;
-    transition: 0.6s;
-}
-
-.btn1 {
-    background-image: linear-gradient(to left, #EA2027, #EA2027, #f700f7);
-}
-
-.btn2 {
-    background-image: linear-gradient(to left, #C4E538, #009432,#C4E538);
-}
-.btn3 {
-    background-image: linear-gradient(to left, #12CBC4, #0652DD, #12CBC4);
-}
-
-.btn4 {
-    background-image: linear-gradient(to left, #FDA7DF, #9980FA, #FDA7DF);
-}
-
-.btn:hover{
-    background-position: right;
-}
 
 /* fin test */
 
@@ -182,16 +241,30 @@ test*/
 
 /* style items dans divs & container - index */
 
-.mother-container-chiffres {
+/* NE PAS TOUCHER CHIFFRES - répartition avec width pour 100% écran Mac/Pc  */
 
+.mother-container-chiffres {
   display: flex;
 }
 
 .chiffres {
     flex-grow: 1;
     height: 100px;
-    width: 50%;
+    width: 35%;
 }
+
+.chiffres-2 {
+    flex-grow: 1;
+    height: 100px;
+    width: 15%;
+}
+
+.chiffres-3 {
+    flex-grow: 1;
+    height: 100px;
+    width: 15%;
+}
+
 
 .chiffres:nth-child(1){
     flex-basis: 50px;
@@ -206,6 +279,8 @@ test*/
 .container-2 {
     display: flex;
 }
+
+/* ne pas toucher demandes */
 
 .demandes {
     flex-grow: 2;
