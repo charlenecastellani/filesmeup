@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
   def index
     @requests = policy_scope(Request)
     @emetteur_requests = @requests.where(emetteur_id: current_user.id)
-    @doc_a_valider = @emetteur_requests.joins(:documents).where("documents.etat_document = ?", "reçu").count
+    @demande_en_cours_envoyees = @emetteur_requests.joins(:documents).where(documents: Document.where(etat_document: ["envoyé", "en attente"])).uniq.count 
+    @doc_a_valider = @emetteur_requests.joins(:documents).where("documents.etat_document = ?", "envoyé").count 
     @destinataire_requests = @requests.where(destinataire_id: current_user.id)
     @doc_refuse = @destinataire_requests.joins(:documents).where("documents.etat_document = ?", "refusé").count
    end 

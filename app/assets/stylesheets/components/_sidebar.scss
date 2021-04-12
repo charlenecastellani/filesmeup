@@ -50,11 +50,16 @@ body
   text-align: center;
 }
 
+.sidebar ul
+{
+  padding-left: 0px;
+}
 
 .wrapper .sidebar ul li a
 {
   color: #bdb8d7;
   display: block;
+  text-decoration: none;
 }
 
 .wrapper .sidebar ul li i

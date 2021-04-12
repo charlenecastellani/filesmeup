@@ -21,16 +21,17 @@
     <!---- start card * 3 --->
     <div class="chiffres">
       <div class="couleur-chiffres-1">
-      <h2>24</h2>
+      <h2><%= @demande_en_cours_envoyees %></h2>
+      <h2><%= @demande_en_cours_recues %></h2>
     </div>
-    <p>Documents envoyés</p>
+    <p>Demandes en cours</p>
     </div>
 
     <div class="chiffres-2">
       <div class="couleur-chiffres-2">
-        <h2>48</h2>
+        <h2><%=  @doc_a_valider %></h2>
       </div>
-      <p>Documents reçus </p>
+      <p>Documents à valider</p>
     </div>
 
     <div class="chiffres-3">
