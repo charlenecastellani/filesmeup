@@ -17,6 +17,11 @@ body
 
 }
 
+.sign-out 
+{
+  font-size: 14px;
+}
+
 
 .wrapper
 {
@@ -41,12 +46,12 @@ body
   margin-bottom: 30px;
 }
 
-
 .wrapper .sidebar ul li
 {
-  padding: 15px;
+  padding: 24px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(225,225,225,0.05);
+  border-top: 1px solid rgba(225,225,225,0.05);  
+  text-align: center;
 }
 
 
@@ -56,9 +61,10 @@ body
   display: block;
 }
 
-.wrapper .sidebar ul li a .fas
+.wrapper .sidebar ul li i
 {
-  width: 25px;
+  color: #bdb8d7;
+  padding-bottom: 8px;
 }
 
 .wrapper .sidebar ul li:hover
@@ -97,5 +103,22 @@ body
   border-top-left-radius: 5px;
 }
 
+.fas.fa-tachometer-alt
+{
+  font-size: 24px;
+}
 
+.fas.fa-folders{
+  font-size: 24px;
+}
 
+.fas.fa-sign-out-alt
+{
+  font-size: 16px;
+  padding-top: 160px;
+}
+
+.fas.fa-cog
+{
+  font-size: 24px;
+}
