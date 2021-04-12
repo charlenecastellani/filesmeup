@@ -7,6 +7,7 @@
   margin-bottom: 30px;
   h1 {
     font-weight: bold;
+    color: #717171;
   }
   h2 {
     opacity: 0.8;
@@ -33,4 +34,13 @@
 
 .fa-trash {
   color:#771788;
+}
+.titre-content {
+  border-radius: 20px;
+  margin: 20px;
+  padding: 80px;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+}
+.bouton-centre{
+  margin-top: 100px;
 }
