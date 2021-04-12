@@ -70,11 +70,16 @@
 
                <!--- col 3 - avancement pourcentage --->
               <div class="index-avancement">
-                <div class="index-deadline-2"><h4>Pourcentage</h4>
-                <strong><p></strong><%= request.avancement%> %</p>
+                <div class="index-deadline-2">Pourcentage
+                <p><%= request.avancement%> %</p>
                 </div>
 
               </div>
+
+
+              <---- Block 2 ---->
+
+
               <!--- col 2 - Titre Audit - Class à créer  --->
 
               <div class="titre-request">
@@ -85,7 +90,9 @@
                     <!--- col 2 - Jours RESTANTS --->
               <div class="index-deadline">
                 <div class="dealine-h4">
-                  <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
+                  <p>
+                    <i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %>
+                  </p>
                 </div>
               </div>
 

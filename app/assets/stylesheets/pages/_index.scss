@@ -377,7 +377,7 @@ background-color: white;
 }
 
 .index-deadline {
-  order: 1;
+
   background: #fae9cb;
   box-shadow: none;
   border-radius: 20px;
@@ -388,8 +388,14 @@ background-color: white;
 }
 
 
-.index-deadline h4 {
+.index-deadline h4 p {
+  order: 1;
   color: blue;
+  font-size: 12px;
+}
+
+.index-avancement{
+  color: red;
   font-size: 10px;
 }
 
@@ -397,7 +403,6 @@ background-color: white;
   color: blue;
   font-size: 12px;
 }
-
 
 .validation {
   color: black;
@@ -410,25 +415,16 @@ background-color: white;
   border: 10px;
 }
 
-
-
 .validation .index-deadline h4 {
   color: blue;
   font-size: 12px;
 }
 
-.index-avancement{
-  order: 3;
-  color: red;
-  font-size: 20px;
-}
+
 
 .titre-request h4 {
-  order: 2;
-  display: flex;
   color: black;
   font-size: 10px;
-
 }
 
 /* Pourcentage */
