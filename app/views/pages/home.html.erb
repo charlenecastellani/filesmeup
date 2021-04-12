@@ -23,7 +23,7 @@
 
                     <% if current_user == nil %>
                      <li class="nav-item">
-                      <a class="btn btn-primary" aria-current="page" href="/users/sign_up">Créer un compte</button>
+                      <a class="btn btn-primary-home" aria-current="page" href="/users/sign_up">Essayer la démo</button>
                        <li><a class="nav-link active" aria-current="page" href="/users/sign_in">Sign in</a></li>
                     </li>
 
@@ -93,7 +93,6 @@
             <h4>Vos documents accéssible</h4>
             <p> 99% de nos réponses satisfaisantes sont <br> délivrés avec un temps <br> moyen de réponse de 3 minutes</p>
           </div>
-
       </div>
       <!--- button ------>
       <button type="button" class="btn btn-primary">Tous les services</button>
@@ -131,26 +130,32 @@
       <div class="container">
         <h1 class="title text-center">Testimoniaux</h1>
         <div class="row offset-1">
-          <div class="col-md-4 testimonials">
-            <p>"J'ai beaucoup apprecié de travaille avec <br> FilesMeUp je peux enfin me focaliser <br> sur mon travail
-              <br>et moins penser à la paperasse.</p>
-                <%= image_tag("natalia.png", :class => "") %>
-                <p class="user-details"><b>Natalia P</b> RH at Flux</p>
-          </div>
 
+          <!--- Conserver le text sur 4 lignes --->
           <div class="col-md-4 testimonials">
-            <p>"L'administratif est devenu <br>un est simple comme un jeu d'enfants.
+            <p>"J'ai fais appel à FilesMeUp pour accélérer <br>mon flux de documents,<br> je peux enfin me focaliser sur mon travail
               <br>
-              <br> Ça a changé ma vie et mes journées !</p>
-                <%= image_tag("seb.png", :class => "") %>
-                <p class="user-details"><b>Seb.M</b> Manager at LeGram</p>
+              <br>Je suis très satistaite de leurs services.</p>
+                <%= image_tag("Natalia-2.png", :class => "") %>
+                <p class="user-details"><b>Natalia P</b> Ressources Humaines - So Flux</p>
           </div>
 
           <div class="col-md-4 testimonials">
-            <p>"L'administratif est devenu <br>un est simple comme un jeu d'enfants.
-              <br> Ça a changé ma vie et mes journées !</p>
+            <p>"L'administratif qui est souvent vu comme chronophage et ennuyante. <br>
+              <br> Grâce à FilesMeUp, ceci est devenu pour nous <br>une tâche simple comme un jeu d'enfants.
+              <br>
+            </p>
                 <%= image_tag("seb.png", :class => "") %>
-                <p class="user-details"><b>Seb.M</b> Manager at LeGram</p>
+                <p class="user-details"><b>Seb.M</b> Manager - LeGral Finances</p>
+          </div>
+
+          <div class="col-md-4 testimonials">
+            <p>"FilesMeUp est le site dont j'avais besoin.
+              <br> Je peux déléguer le travail à une équipe pro et à l'écoute.
+              <br>
+              <br>Un grand merci !"</p>
+                <%= image_tag("roger-construction-2.png", :class => "") %>
+                <p class="user-details"><b>Roger.C</b> Chargé d'affaires - C&B.Construction</p>
           </div>
 
         </div>

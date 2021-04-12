@@ -241,6 +241,9 @@ background-color: #FAFAFB;
 
 /* style items dans divs & container - index */
 
+
+
+
 /* NE PAS TOUCHER CHIFFRES - répartition avec width pour 100% écran Mac/Pc  */
 
 .mother-container-chiffres {
@@ -289,7 +292,25 @@ background-color: #FAFAFB;
     width: 80%;
 }
 
+
+
+
 /* style petites divs demandes - index */
+
+
+/* Boutton demandes */
+
+
+/*RENOMMER BOUTON
+#services .btn-primary
+{
+  box-shadow: none;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #a516ba, #5f1782);
+}
+*/
 
 .cards {
 display: flex;
@@ -377,27 +398,32 @@ background-color: white;
 }
 
 .index-deadline {
-  order: 1;
   background: #fae9cb;
+  flex: display;
   box-shadow: none;
   border-radius: 20px;
-  height: 20px;
+  height: 30px;
   width: 100px;
   padding: 6px 4px;
   border: 10px;
 }
 
 
-.index-deadline h4 {
+.index-deadline h4 p {
+  order: 1;
   color: blue;
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.index-avancement{
+  color: red;
+  font-size: 20px;
 }
 
 .dealine-h4{
   color: blue;
   font-size: 12px;
 }
-
 
 .validation {
   color: black;
@@ -410,27 +436,19 @@ background-color: white;
   border: 10px;
 }
 
-
-
 .validation .index-deadline h4 {
   color: blue;
   font-size: 12px;
 }
 
-.index-avancement{
-  order: 3;
-  color: red;
-  font-size: 20px;
-}
+
 
 .titre-request h4 {
-  order: 2;
-  display: flex;
   color: black;
   font-size: 10px;
-
 }
 
 /* Pourcentage */
+
 
 
