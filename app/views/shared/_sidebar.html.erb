@@ -1,7 +1,10 @@
 
 <div class="wrapper">
   <div class="sidebar">
-      <h2>Logo</h2>
+
+      <%= image_tag("FilesMeUp-trans-white-crop.png", :class => "services-img") %>
+      <h2></h2>
+
       <ul>
         <li>
           <i class="fas fa-tachometer-alt"></i>
@@ -14,9 +17,13 @@
         <li>
         <i class="fas fa-cog"></i>
         <a href="#">Paramétres</a></li>
-        <li>
+
+        <div class="log-out-sidebar">
+           <li>
         <i class="fas fa-sign-out-alt"></i>
-        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "sign-out"%></li>
+        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "sign-out"%>
+      </li>
+        </div>
       </ul>
 
 
