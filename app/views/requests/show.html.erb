@@ -25,7 +25,7 @@
       <% end %>
     </div>
   </div>
-   
+
   <table class="table table-bordered table-fichier">
     <thead>
       <th>Fichier</th>
@@ -44,12 +44,11 @@
               <% if document.etat_document == "en attente" || document.etat_document == "refusé" %>
                 <%= simple_form_for document do |f| %>
                   <%= f.input :fichier, as: :file %>
-                  <%= f.submit "Envoyer" %>
+                  <%= f.submit "Envoyer", class: "btn btn-pink" %>
                 <% end %>
               <% end %>
               <% if document.etat_document == "envoyé" || document.etat_document == "validé" %>
               <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
-               <button type="button" class= data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
                             <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -65,16 +64,16 @@
                         <% end %>
                       </div>
                     </div>
-                  </div> 
+                  </div>
                 </div>
-              <% end %> 
-            <% end %>     
-            
+              <% end %>
+            <% end %>
+
             <% if current_user == @request.emetteur %>
               <% if document.fichier.attached? %>
-              <button type="button" class="fas fa-search" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
+              <button type="button" class="fas fa-search p-0" data-toggle="modal" data-target=<%="#exampleModalLong" + "#{document.id}" %>></button>
                 <div class="modal document-modal fade" id=<%="exampleModalLong" + "#{document.id}" %> tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
+                  <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Document téléchargé :</h5>
@@ -84,20 +83,20 @@
                       </div>
                       <div class="modal-body">
                         <% if document.fichier.attached? %>
-                          <%= cl_image_tag document.fichier.key, format: :jpg, height: 1000, width: 800 %>
+                          <%= cl_image_tag document.fichier.key, format: :jpg, height: 900, width: 750 %>
                         <% end %>
                       </div>
                       <% if document.etat_document == "envoyé"%>
                         <div class="modal-footer">
-                          <%= link_to "refuser", refuse_document_path(document), method: :patch, class:"btn btn-danger"  %>
-                          <%= link_to "valider", valide_document_path(document), method: :patch, class:"btn btn-primary"  %>
+                          <%= link_to "Refuser", refuse_document_path(document), method: :patch, class:"btn btn-danger"  %>
+                          <%= link_to "Valider", valide_document_path(document), method: :patch, class:"btn btn-primary"  %>
                         </div>
                       <% end %>
                     </div>
                   </div>
                 </div>
               <% end %>
-              <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>    
+              <%= link_to "", document_path(document), method: :delete, class: "fa fa-trash destroy_dose" %>
             <% end %>
           </td>
         </tr>
@@ -105,4 +104,3 @@
     </tbody>
   </table>
 </div>
-   
