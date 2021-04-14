@@ -264,7 +264,6 @@ background-color: #FAFAFB;
 .demandes {
   align-items: center;
     flex-grow: 2;
-    height: 800px;
     width: 80%;
 }
 
@@ -403,7 +402,7 @@ background-color: white;
 }
 
 .index-avancement{
-  color: red;
+  color: black;
   font-size: 20px;
 }
 
@@ -487,16 +486,6 @@ background-color: white;
 
 /* Pourcentage alignement */
 
-.index-deadline-2 {
-  background: #fae9cb;
-  flex: display;
-  box-shadow: none;
-  border-radius: 20px;
-  height: 30px;
-  width: 100px;
-  padding: 6px 4px;
-  border: 10px;
-}
 
 /* fin pourcentage alignement */
 
@@ -507,7 +496,7 @@ background-color: white;
 }
 
 .index-avancement-2 {
-  color: red;
+  color: black;
   font-size: 20px;
 }
 

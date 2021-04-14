@@ -140,63 +140,32 @@
         <div class="demandes">
           <p>Demandes reçues</p>
           <% @destinataire_requests.each do |request| %>
-            <%= link_to request_path(request), class: "remove_link_style" do  %>
-
+            <%= link_to request_path(request), class: "remove_link_style_index" do  %>
                 <div class="card-demandes-2">
-
-
-                    <!--- Block 1 :---->
-
                     <div class="index-user-info-2">
-                <% if request.emetteur.photo.attached?  %>
-                  <%= cl_image_tag request.emetteur.photo.key, class: "avatar" %>
-                <% end  %>
-
-                <div class="info-2">
-                  <strong><p><%= "#{request.emetteur.prenom} #{request.emetteur.nom}"  %></p></strong>
-                  <p><%=request.emetteur.entreprise %></p>
-                </div>
-              </div>
-                    <!--- Block 2 avancement ---->
-                    <div class="index-avancement-2">
-                <div class="index-deadline-2">
-                <p><%= request.avancement%> %</p>
-                </div>
-              </div>
-
-
-                    <!--- Block 3 ---->
-                  <div class="titre-request-2">
-                <strong><%= request.titre %></strong>
-                 <div class="index-deadline">
-                <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
-                </div>
-              </div>
-
-
-
-                    <!--- Block 4 ---->
-
-                    <!--- Block 5 ---->
-
-
-
-         <!---
-                        <p><%=request.titre %></p>
+                      <% if request.emetteur.photo.attached?  %>
+                        <%= cl_image_tag request.emetteur.photo.key, class: "avatar" %>
+                      <% end  %>
+                      <div class="info-2">
+                        <strong><p><%= "#{request.emetteur.prenom} #{request.emetteur.nom}"  %></p></strong>
+                        <p><%=request.emetteur.entreprise %></p>
                       </div>
-                   </div>
+                    </div>
 
-                    <p><%=request.emetteur.entreprise %></p>
-                    <p><%=request.date_echeance.strftime("%d/%m/%Y") %></p>
-                    <p>avancement : <%= request.avancement%> %</p>
-                    <p>document refusé <%= @doc_refuse%> </p>
+                    <div class="index-avancement-2">
+                      <div class="index-deadline-2">
+                        <p><%= request.avancement%> %</p>
+                      </div>
+                    </div>
+                    <div class="titre-request-2">
+                      <strong><%= request.titre %></strong>
+                      <div class="index-deadline">
+                        <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
+                      </div>
+                    </div>
                   </div>
-
               <% end %>
-
-
           <% end %>
-
         </div>
       </div>
   </div>
