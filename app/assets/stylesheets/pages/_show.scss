@@ -34,6 +34,10 @@
 
 .fa-trash {
   color:#771788;
+  &:hover {
+    color: #771788 ;
+    opacity: 0,6;
+  }
 }
 .titre-content {
   border-radius: 20px;
