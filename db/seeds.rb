@@ -58,7 +58,7 @@ audit2 = Request.create(titre: "Audit juridique 2020", date_echeance: "10/06/202
 audit3 = Request.create(titre: "Audit social 2020", date_echeance: "15/05/2021", date_creation: "20/03/2021", destinataire: user5, emetteur: user2)
 audit4 = Request.create(titre: "Audit comptes 2020", date_echeance: "30/04/2021", date_creation: "10/03/2021", destinataire: user7, emetteur: user2)
 audit5 = Request.create(titre: "Audit comptes 2020", date_echeance: "31/05/2021", date_creation: "27/03/2021", destinataire: user8, emetteur: user2)
-audit6 = Request.create(titre: "Revue filiales 2020", date_echeance: "15/04/2021", date_creation: "02/03/2021", destinataire: user2, emetteur: user4)
+audit6 = Request.create(titre: "Revue filiales 2020", date_echeance: "30/04/2021", date_creation: "02/03/2021", destinataire: user2, emetteur: user4)
 
 filed1 = URI.open("https://www.excel-pratique.com/view/fr/logiciels/img/logiciel_de_comptabilite/logiciel-compta-pratique-excel.png")
 filed2 = URI.open("https://www.excel-pratique.com/view/fr/logiciels/img/logiciel_de_comptabilite/logiciel-compta-pratique-excel.png")
