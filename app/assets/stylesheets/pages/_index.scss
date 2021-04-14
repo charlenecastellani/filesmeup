@@ -354,6 +354,7 @@ background-color: white;
   flex-direction: row;
 }
 
+/* Demandes faites */
 
 .index-user-info {
   display: flex;
@@ -380,6 +381,8 @@ background-color: white;
     color: inherit;
   }
 }
+
+
 
 .index-deadline {
   background: #fae9cb;
@@ -428,6 +431,110 @@ background-color: white;
 
 
 .titre-request h4 {
+  color: black;
+  font-size: 10px;
+}
+
+
+/* fin DEMANDES FAITES */
+
+
+.card-demandes-2 {
+    opacity: 1;
+    cursor: pointer;
+    background-color: #FAFAFB;
+    border-radius: 20px;
+    margin: 20px;
+    height: 100px;
+    padding: 30px;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    decoration: none;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.index-user-info-2 {
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+    .info-2{
+      margin-left: 10px;
+      p {
+        margin: 0;
+      }
+    }
+}
+
+
+.index-container-2 {
+  margin-left: 200px;
+}
+
+
+.remove_link_style_index-2 {
+  text-decoration: none !important;
+  color: inherit;
+  &:hover{
+    color: inherit;
+  }
+}
+
+/* Pourcentage alignement */
+
+.index-deadline-2 {
+  background: #fae9cb;
+  flex: display;
+  box-shadow: none;
+  border-radius: 20px;
+  height: 30px;
+  width: 100px;
+  padding: 6px 4px;
+  border: 10px;
+}
+
+/* fin pourcentage alignement */
+
+.index-deadline-2 h4 p {
+  order: 1;
+  color: blue;
+  font-size: 12px;
+}
+
+.index-avancement-2 {
+  color: red;
+  font-size: 20px;
+}
+
+.dealine-h4{
+  color: blue;
+  font-size: 12px;
+}
+
+.validation-2 {
+  color: black;
+  background: green;
+  box-shadow: none;
+  border-radius: 20px;
+  height: 20px;
+  width: 50px;
+  padding: 6px 4px;
+  border: 10px;
+}
+
+.validation-2 .index-deadline-2 h4 {
+  color: blue;
+  font-size: 12px;
+}
+
+
+
+.titre-request-2 h4 {
   color: black;
   font-size: 10px;
 }

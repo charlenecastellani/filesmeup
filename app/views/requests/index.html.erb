@@ -56,13 +56,18 @@
 
 
   <div class="container-2">
+
     <div class="demandes">
       <p>Demandes faites</p>
+
       <div class="text-center">
             <%= link_to "Créer une nouvelle demande",new_request_path, class: "btn btn-pink" %>
             </div>
+
       <% @emetteur_requests.each do |request| %>
         <%= link_to request_path(request), class: "remove_link_style_index" do  %>
+
+
           <div class="card-demandes">
 
               <!--- col 1 avatar --->
@@ -83,7 +88,6 @@
                 </div>
               </div>
 
-
               <!---- Block 2 --->
                   <div class="titre-request">
                 <strong><%= request.titre %></strong>
@@ -91,9 +95,6 @@
                 <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
                 </div>
               </div>
-
-
-
 
               <!---- Block 2
                   <div class="titre-request">
@@ -114,10 +115,6 @@
 
               <!--- col 2 - Titre Audit - Class à créer  --->
 
-
-
-
-
                <!--- col 3 ?
                <div class="validation">
                   <div class="dealine-h4">
@@ -128,10 +125,6 @@
                 </div>
 
                 --->
-
-
-
-
 
                  <!--- ligne 4
                <div class="ligne4-nouveau-document">
@@ -144,13 +137,51 @@
       </div>
 
 
-        <div class="demandes"><p>Demandes reçues</p>
+        <div class="demandes">
+          <p>Demandes reçues</p>
           <% @destinataire_requests.each do |request| %>
             <%= link_to request_path(request), class: "remove_link_style" do  %>
 
-                <div class="card-demandes">
-                  <div class="index-user-info">
-                      <div class="info">
+                <div class="card-demandes-2">
+
+
+                    <!--- Block 1 :---->
+
+                    <div class="index-user-info-2">
+                <% if request.destinataire.photo.attached?  %>
+                  <%= cl_image_tag request.destinataire.photo.key, class: "avatar" %>
+                <% end  %>
+
+                <div class="info-2">
+                  <strong><p><%= "#{request.destinataire.prenom} #{request.destinataire.nom}"  %></p></strong>
+                  <p><%=request.destinataire.entreprise %></p>
+                </div>
+              </div>
+                    <!--- Block 2 avancement ---->
+                    <div class="index-avancement-2">
+                <div class="index-deadline-2">
+                <p><%= request.avancement%> %</p>
+                </div>
+              </div>
+
+
+                    <!--- Block 3 ---->
+                  <div class="titre-request-2">
+                <strong><%= request.titre %></strong>
+                 <div class="index-deadline">
+                <p><i class="fas fa-hourglass-start mr-2"></i> J -  <%= ((request.date_echeance - Time.new)/60/60/24).to_i %></p>
+                </div>
+              </div>
+
+
+
+                    <!--- Block 4 ---->
+
+                    <!--- Block 5 ---->
+
+
+
+         <!---
                         <p><%=request.titre %></p>
                       </div>
                    </div>
@@ -163,7 +194,9 @@
 
               <% end %>
 
+
           <% end %>
+
         </div>
       </div>
   </div>
