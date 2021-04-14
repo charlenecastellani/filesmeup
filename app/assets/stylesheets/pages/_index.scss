@@ -70,44 +70,41 @@ background-color: #FAFAFB;
 }
 
 
-.chiffres{
-    font-size: 12px;
+.chiffres {
     opacity: 1;
     cursor: pointer;
     border-radius: 20px;
     margin: 20px;
-    padding: 80px;
     width: 10px;
+    padding: 80px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
-
+    opacity: 100%;
+    align-items: center;
+    justify-content: space-around;
   }
 
-/* ok */
+  .chiffre-cles {
+    flex-direction: column;
+  }
 
-.chiffres {
-  opacity: 100%;
-  background-color: #2D745B;
-}
-
-
-
-.couleur-chiffres-1 h2 {
+.chiffres-1 h2 {
   display: flex;
   justify-content: center;
   color: #EF8D32;
   font-size: 50px;
 }
 
-.chiffres p {
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
-}
 
+.chiffres h4 {
+  font-size: 24px;
+  color: #717171;
+}
+.chiffres h3 {
+  color: #EF8D32;
+  text-align: center;
+}
 
 .chiffres-2 {
     font-size: 12px;
@@ -124,9 +121,6 @@ background-color: #FAFAFB;
     cursor: pointer;
   }
 
-.chiffres-2 {
-  background-color: #2D745B;
-}
 
 .couleur-chiffres-2 h2 {
   display: flex;
@@ -137,7 +131,6 @@ background-color: #FAFAFB;
 .chiffres-2 p {
   display: flex;
   justify-content: center;
-  color: white;
   font-size: 14px;
 }
 
@@ -159,20 +152,15 @@ background-color: #FAFAFB;
     cursor: pointer;
 
   }
-.chiffres-3 {
-  background-color: #12B88E;
-}
 
 .couleur-chiffres-3 h2 {
   display: flex;
   justify-content: center;
-  color: #fff;
   font-size: 50px;
 }
 .chiffres-3 p {
   display: flex;
   justify-content: center;
-  color: white;
   font-size: 14px;
 }
 
@@ -551,5 +539,8 @@ background-color: white;
 
 /* Pourcentage */
 
-
-
+.indicateurs-img
+{
+  width: 80px;
+  margin-top: 20px;
+}

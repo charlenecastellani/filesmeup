@@ -91,12 +91,9 @@
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
 
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= year %>" aria-expanded="true" aria-controls="collapseOne">
-                                <% if collapse = false %>
-                                <i class="fas fa-folder-plus"></i>
-                                <% else %>
-                                <i class="fas fa-folder-minus"></i>
-                                <% end %>
+                            <button class="btn btn-link" id="folder-btn" data-toggle="collapse" data-target="#collapse<%= year %>" aria-expanded="true" aria-controls="collapseOne">
+                               <i class="fas fa-folder-plus" id="plus"></i>
+                                <i class="fas fa-folder-minus d-none" id="minus"></i>
                                 <%= year %> 
                                 
                             </button>
