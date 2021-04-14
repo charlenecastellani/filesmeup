@@ -539,6 +539,16 @@ background-color: white;
   font-size: 10px;
 }
 
+
+.remove_link_style_index-2 {
+  text-decoration: none !important;
+  color: inherit;
+  &:hover{
+    color: inherit;
+  }
+}
+
+
 /* Pourcentage */
 
 
