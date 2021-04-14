@@ -148,13 +148,13 @@
                     <!--- Block 1 :---->
 
                     <div class="index-user-info-2">
-                <% if request.destinataire.photo.attached?  %>
-                  <%= cl_image_tag request.destinataire.photo.key, class: "avatar" %>
+                <% if request.emetteur.photo.attached?  %>
+                  <%= cl_image_tag request.emetteur.photo.key, class: "avatar" %>
                 <% end  %>
 
                 <div class="info-2">
-                  <strong><p><%= "#{request.destinataire.prenom} #{request.destinataire.nom}"  %></p></strong>
-                  <p><%=request.destinataire.entreprise %></p>
+                  <strong><p><%= "#{request.emetteur.prenom} #{request.emetteur.nom}"  %></p></strong>
+                  <p><%=request.emetteur.entreprise %></p>
                 </div>
               </div>
                     <!--- Block 2 avancement ---->
