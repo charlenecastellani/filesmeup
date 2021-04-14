@@ -16,7 +16,11 @@
   <div class="titre">
     <div class="titre-content">
       <h1><%= @request.titre %></h1>
-      <h2><%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %> <%= @request.destinataire.nom %> (<%= @request.destinataire.fonction %>)</h2>
+      <% if @request.emetteur == current_user %>
+        <h2>Destinataire : <%= @request.destinataire.entreprise %> : <%= @request.destinataire.prenom %> <%= @request.destinataire.nom %> (<%= @request.destinataire.fonction %>)</h2>
+      <% else %>
+        <h2>Emetteur : <%= @request.emetteur.entreprise %> : <%= @request.emetteur.prenom %> <%= @request.emetteur.nom %> (<%= @request.emetteur.fonction %>)</h2>
+        <% end %>
       <h2> J-<%= ((@request.date_echeance - Time.new)/60/60/24).to_i %>   :  Echéance au <%= @request.date_echeance.strftime("%d/%m/%Y") %> </h2>
     </div>
     <div class="bouton-centre">
